@@ -1,0 +1,196 @@
+.header {
+  height: 93px;
+  .container {
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    #hamburger {
+        font-size: 30px;
+        cursor: pointer;
+        display: none;
+        @media (max-width:864px) {
+            display: block;
+        }
+    }
+    .active {
+      display: flex !important;
+      transform: scaleY(1) !important;
+    
+    }
+    .hamburger_active {
+        right: 0 !important;
+    }
+    .hamburger {
+      display: none;
+      right: -100vw;
+      top: 0;
+      width: 50vw;
+      position: fixed;
+      background-color: #f2f2f2;
+      height: 100vh;
+      .ri-close-line {
+        position: absolute;
+        right: 2%;
+        cursor: pointer;
+        top: 1.5%;
+        font-size: 30px;
+      }
+      @media (max-width:500px) {
+            width: 60vw;
+            padding-left: 10px;
+      }
+      @media (max-width: 865px) {
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        .item {
+          display: flex;
+          flex-direction: column;
+          padding-bottom: 8px;
+          .item_header {
+            padding-left: 5px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+          }
+          .item_body {
+            transition: 0.4s all;
+            padding-top: 10px;
+            transform: scaleY(0);
+            display: none;
+            padding-bottom: 10px;
+            padding-left: 15px;
+          }
+          span {
+            cursor: pointer;
+          }
+          i {
+            cursor: pointer;
+          }
+          .body {
+          }
+        }
+      }
+      button {
+        background-color: var(--orange);
+        width: 190px;
+        margin: 10px 0px 0px 10px;
+        height: 41px;
+        color: #fff;
+        border-radius: 20px;
+        border: none;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 34px;
+        cursor: pointer;
+      }
+    }
+    img {
+      max-width: 194px;
+      height: 37px;
+      object-fit: contain;
+      cursor: pointer;
+    }
+    .right {
+      height: 100%;
+      min-width: 40%;
+      align-items: center;
+      display: flex;
+      gap: 27px;
+      @media (max-width:864px) {
+        justify-content: end;
+        gap: 14px;
+      }
+      .list {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 27px;
+        @media (max-width: 864px) {
+          display: none;
+        }
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+
+        .dropdown-button {
+          color: var(--black);
+          background-color: #fff;
+          border: none;
+          font-weight: 500;
+          font-size: 20px;
+          cursor: pointer;
+        }
+
+        .dropdown-content {
+          width: 100%;
+          display: none;
+          position: absolute;
+          z-index: 1;
+
+          a {
+            width: 100%;
+            text-align: center;
+            display: block;
+            color: #333333;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 16px;
+
+            &:hover {
+              background-color: #f2f2f2;
+            }
+          }
+        }
+
+        &:hover .dropdown-content {
+          display: block;
+        }
+      }
+
+      .title {
+        font-weight: 500;
+        font-size: 20px;
+        color: var(--black);
+        line-height: 34px;
+        cursor: pointer;
+      }
+      .more {
+        align-items: center;
+        height: 100%;
+        display: flex;
+        gap: 20px;
+        p {
+          text-decoration: underline;
+          font-weight: 500;
+          font-size: 20px;
+          color: var(--color);
+          cursor: pointer;
+          line-height: 34px;
+        }
+        button {
+          background-color: var(--orange);
+          width: 190px;
+          height: 41px;
+          color: #fff;
+          border-radius: 20px;
+          border: none;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 34px;
+          cursor: pointer;
+          @media (max-width:864px) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
