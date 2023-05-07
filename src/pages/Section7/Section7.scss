@@ -1,0 +1,64 @@
+.section7{
+  min-height: 543px;
+  .container{
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 40px;
+    margin-top: 30px;
+    gap: 30px;
+    h1{
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 130%;
+      letter-spacing: -0.54px;
+      color: #141414;
+    }
+    .bottom{
+      display: flex;
+      width: 100%;
+      gap: 40px;
+      flex-wrap: wrap;
+        .left{
+          display: flex;
+          gap: 40px;
+          width: 900px;
+          flex-wrap: wrap;
+          .card{
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            h1{
+              font-weight: 600;
+              font-size: 40px;
+              line-height: 49px;
+              color: #AFCCFF;
+            }
+            p{
+              font-weight: 500;
+              font-size: 16px;
+              line-height: 20px;
+              display: flex;
+              align-items: center;
+              font-feature-settings: 'pnum' on, 'lnum' on;
+              color: #141414;
+            }
+          }
+        }
+      .right{
+        display: flex;
+        align-items: center;
+        width: 400px;
+        img{
+          max-width: 321px;
+          height: 240px;
+        }
+      }
+    }
+  }
+}

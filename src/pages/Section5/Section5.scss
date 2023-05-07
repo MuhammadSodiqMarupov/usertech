@@ -4,26 +4,28 @@
     max-width: 1440px;
     height: 100%;
     margin: 0 auto;
-    border: 5px solid;
     display: flex;
     gap: 40px;
     align-items: center;
-   justify-content: center;
+    justify-content: center;
     flex-direction: column;
+    padding-top: 30px;
     .card1{
-      min-width: 1110px;
-      height: 438px;
+      width: 100%;
+      height: 100%;
       background-image: url("../../images/card1.svg");
-      background-size: contain;
       background-repeat: no-repeat;
       display: flex;
       flex-direction: column;
-      justify-content: start;
-      padding-top: 40px;
+      background-size: cover;
       padding-left: 40px;
+      justify-content: center;
+      border-radius: 8px;
+    padding-top: 30px;
       gap: 15px;
-      padding-bottom: 20px;
+      padding-bottom: 40px;
       h1{
+        display: inline;
         font-weight: 500;
         font-size: 32px;
         line-height: 47px;
@@ -44,6 +46,9 @@
         border-radius: 10px;
         cursor: pointer;
         font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 20px;
         line-height: 47px;
         color: #000000;
@@ -51,18 +56,19 @@
       }
     }
     .card2{
-      width: 1110px;
-      height: 438px;
-      background-image: url("../../images/card3.svg");
-      background-size: contain;
+      width: 100%;
+      height: 100%;
       background-repeat: no-repeat;
       display: flex;
       flex-direction: column;
-      justify-content: start;
-      padding-top: 40px;
+      background-size: cover;
       padding-left: 40px;
+      justify-content: center;
+      border-radius: 8px;
+      padding-top: 30px;
+      padding-bottom: 40px;
       gap: 15px;
-      padding-bottom: 20px;
+      background-image: url("../../images/card3.svg");
       h1{
         font-weight: 500;
         font-size: 32px;
@@ -87,22 +93,27 @@
         font-size: 20px;
         line-height: 47px;
         color: #000000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
       }
     }
     .card3{
-      width: 1110px;
-      height: 438px;
-      background-image: url("../../images/card2.svg");
-      background-size: contain;
+      padding-top: 30px;
+      padding-bottom: 40px;
+      width: 100%;
+      height: 100%;
       background-repeat: no-repeat;
       display: flex;
       flex-direction: column;
-      justify-content: start;
-      padding-top: 40px;
+      background-size: cover;
       padding-left: 40px;
+      justify-content: center;
+      border-radius: 8px;
       gap: 15px;
       padding-bottom: 20px;
+      background-image: url("../../images/card2.svg");
       h1{
         font-weight: 500;
         font-size: 32px;
@@ -126,8 +137,10 @@
         font-weight: 500;
         font-size: 20px;
         line-height: 47px;
+        display: flex;
+        align-items: center;
         color: #000000;
-
+        justify-content: center;
       }
     }
   }
