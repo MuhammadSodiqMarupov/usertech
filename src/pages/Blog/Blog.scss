@@ -1,0 +1,64 @@
+.blog {
+  margin-top: 50px;
+  min-height: 500px;
+  .container {
+    display: flex;
+    max-width: 1440px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 50px;
+    justify-content: center;
+    gap: 30px;
+    .card {
+      max-width: 380px;
+      border-radius: 8px;
+      box-shadow: 0px 2px 6px 0 gray;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      padding: 15px;
+      padding-left: 20px;
+      gap: 30px;
+      img {
+        width: 330px;
+        height: 228px;
+        margin: 0 auto;
+        display: block;
+        object-fit: contain;
+      }
+      .info {
+        font-size: 14px;
+        font-weight: 500;
+        transition: 0.3s all;
+        cursor: pointer;
+        &:hover {
+          color: #0558ff;
+        }
+      }
+      .title {
+        font-size: 22px;
+        font-weight: 500;
+        transition: 0.3s all;
+        cursor: pointer;
+        &:hover {
+          color: #0558ff;
+        }
+      }
+      .descr {
+        letter-spacing: 2px;
+      }
+      button {
+        border: none;
+        background-color: #fff;
+        transition: 0.4s all;
+        cursor: pointer;
+        color: #0558ff;
+        font-weight: 600;
+        &:hover {
+          color: #f45c20;
+        }
+      }
+    }
+  }
+}

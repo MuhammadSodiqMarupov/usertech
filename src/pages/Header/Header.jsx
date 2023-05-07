@@ -6,12 +6,13 @@ import { useState } from "react";
 import { useEffect } from "react";
 const Header = () => {
   const navigate = useNavigate();
-  const languages =["En", "Ru"];
+  const languages = ["En", "Ru"];
   const langData = [
     {
       dropdowns: [
         {
           title: "Главная",
+          link: "/",
           body: [],
           dropdown: false,
         },
@@ -27,11 +28,13 @@ const Header = () => {
         },
         {
           title: "Блог",
+          link: "",
           body: [],
           dropdown: false,
         },
         {
           title: "Вакагсии",
+          link: "/jobs",
           body: [],
           dropdown: false,
         },
@@ -41,46 +44,77 @@ const Header = () => {
       dropdowns: [
         {
           title: "Home",
+          link: "/",
           body: [],
           dropdown: false,
         },
         {
           title: "Studio",
-          body: ["Work ALgorithm"],
+          body: [
+            {
+              title: "Work ALgorithm",
+              page: "/algorithm",
+            },
+          ],
           dropdown: true,
         },
         {
           title: "Services",
-          body: ["Sites", "Applications"],
+          body: [
+            {
+              title: "Sites",
+              page: "/sites",
+            },
+            {
+              title: "Applications",
+              page: "/applications",
+            },
+            {
+              title: "Promotion",
+              page: "/promotion",
+            },
+            {
+              title: "Artifical Inteligence",
+              page: "/AI",
+            },
+            {
+              title: "Fintech",
+              page: "/Fintech",
+            },
+          ],
           dropdown: true,
         },
         {
           title: "Blog",
+          link: "/blog",
           body: [],
           dropdown: false,
         },
         {
           title: "Vacancies",
+          link: "/jobs",
           body: [],
           dropdown: false,
         },
       ],
     },
   ];
-  const [langIndex, setLangIndex] = useState(JSON.parse(localStorage.getItem("LANG"))??1);
+  const [langIndex, setLangIndex] = useState(
+    JSON.parse(localStorage.getItem("LANG")) ?? 1
+  );
   const [navbarItems, setNavbarItems] = useState([]);
-  useEffect(()=>{
+  useEffect(() => {
     setNavbarItems(langData[langIndex].dropdowns);
-    localStorage.setItem("LANG",langIndex)
-  },[langIndex])
+    localStorage.setItem("LANG", langIndex);
+  }, [langIndex]);
   useEffect(() => {
     setNavbarItems(langData[langIndex].dropdowns);
   }, []);
-  const changeLang = ()=>{
-    if((languages.length-1)<=langIndex) {
-      setLangIndex(prev=>--prev);
-    }else {
-      setLangIndex(prev=>++prev);
+  const changeLang = () => {
+    if (languages.length - 1 <= langIndex) {
+      setLangIndex((prev) => --prev);
+    } else {
+      setLangIndex((prev) => ++prev);
     }
   };
   return (
@@ -129,7 +163,7 @@ const Header = () => {
                 {item.dropdown ? (
                   <div id={"body-" + (index + 1)} className="item_body">
                     {item.body.map((body, index_body) => (
-                      <p key={index_body}>{body}</p>
+                      <p key={index_body}>{body.title}</p>
                     ))}
                   </div>
                 ) : (
@@ -153,19 +187,27 @@ const Header = () => {
           <div className="list">
             {navbarItems.map((item, index) => (
               <div key={index} className="dropdown">
-                <button className="dropdown-button">
-                  {item.title} {item.dropdown? <i class="ri-arrow-down-s-line"></i>:""}
+                <button
+                  className="dropdown-button"
+                  onClick={() => navigate(item.link)}
+                >
+                  {item.title}{" "}
+                  {item.dropdown ? <i class="ri-arrow-down-s-line"></i> : ""}
                 </button>
-                {item.dropdown?<div className="dropdown-content">
-                  {item.body.map((item1,index1)=><p key={index1}>{item1}</p>)}
-                </div>:""}
+                {item.dropdown ? (
+                  <div className="dropdown-content">
+                    {item.body.map((item1, index1) => (
+                      <p onClick={()=>navigate(item1.page)} key={index1}>{item1.title}</p>
+                    ))}
+                  </div>
+                ) : (
+                  ""
+                )}
               </div>
             ))}
           </div>
           <div className="more">
-            <p onClick={changeLang}>
-              {languages[langIndex]}
-            </p>
+            <p onClick={changeLang}>{languages[langIndex]}</p>
             <button>Contacts</button>
             <i
               onClick={(e) => {

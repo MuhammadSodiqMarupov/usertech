@@ -1,0 +1,67 @@
+.sites {
+    margin-top: 40px;
+    min-height: 500px;
+    .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        height: 100%;
+        padding: 30px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1 {
+            width: 100%;
+            display: flex;
+            justify-content: start;
+            margin-left: 26vw;
+            @media (max-width:500px) {
+                margin-left: 10vw;
+            }
+        }
+        p {
+            margin-top: 15px;
+            margin-left:10vw;
+            font-size: 18px;
+            width: 85%;
+            line-height: 35px;
+        }
+        .content {
+            margin-top: 50px;
+            width: 80%;
+            gap: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            .card {
+                background-color: rgb(249, 249, 251);
+                width: 370px;
+                height: 389px;
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+                padding-top: 20px;
+                padding-left: 20px;
+                gap: 20px;
+                .card_title {
+                    font-size: 24px;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                }
+                button {
+                    color:#0256ff;
+                    font-weight: 600;
+                    width: 124px;
+                    height: 57px;
+                    border:none;
+                    cursor: pointer;
+                    border-radius: 13px;
+                    transition: 0.3s all;
+                    &:hover {
+                        background-color: #0256ff;
+                        color: #fff;
+                    }
+                }
+            }   
+        }
+    }
+}

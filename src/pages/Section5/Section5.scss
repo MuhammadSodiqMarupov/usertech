@@ -1,0 +1,134 @@
+.section5{
+  height: 1500px;
+  .container{
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    border: 5px solid;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+   justify-content: center;
+    flex-direction: column;
+    .card1{
+      min-width: 1110px;
+      height: 438px;
+      background-image: url("../../images/card1.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      padding-top: 40px;
+      padding-left: 40px;
+      gap: 15px;
+      padding-bottom: 20px;
+      h1{
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 47px;
+        color: #FFFFFF;
+      }
+      ul{
+        li{
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 32px;
+          color: #FFFFFF;
+        }
+      }
+      button{
+        width: 236px;
+        height: 43px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 47px;
+        color: #000000;
+
+      }
+    }
+    .card2{
+      width: 1110px;
+      height: 438px;
+      background-image: url("../../images/card3.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      padding-top: 40px;
+      padding-left: 40px;
+      gap: 15px;
+      padding-bottom: 20px;
+      h1{
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 47px;
+        color: #FFFFFF;
+      }
+      ul{
+        li{
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 32px;
+          color: #FFFFFF;
+        }
+      }
+      button{
+        width: 236px;
+        height: 43px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 47px;
+        color: #000000;
+
+      }
+    }
+    .card3{
+      width: 1110px;
+      height: 438px;
+      background-image: url("../../images/card2.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      padding-top: 40px;
+      padding-left: 40px;
+      gap: 15px;
+      padding-bottom: 20px;
+      h1{
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 47px;
+        color: #FFFFFF;
+      }
+      ul{
+        li{
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 32px;
+          color: #FFFFFF;
+        }
+      }
+      button{
+        width: 236px;
+        height: 43px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 47px;
+        color: #000000;
+
+      }
+    }
+  }
+}
