@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Header from "./pages/Header/Header";
-import Section1 from "./Pages/Section1/Section1";
-import Section2 from "./Pages/Section2/Section2";
+import Section1 from "./pages/Section1/Section1";
+import Section2 from "./pages/Section2/Section2";
 function App() {
   return (
       <Routes>

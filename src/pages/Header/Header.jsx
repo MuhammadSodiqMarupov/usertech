@@ -13,12 +13,12 @@ const Header = () => {
     },
     {
       title: "Studio",
-      body: ["Asda", "Aoinasd"],
+      body: ["Work ALgorithm"],
       dropdown: true,
     },
     {
       title: "Services",
-      body: ["Nimadir", "Yana nimadir"],
+      body: ["Sites", "Applications"],
       dropdown: true,
     },
     {
