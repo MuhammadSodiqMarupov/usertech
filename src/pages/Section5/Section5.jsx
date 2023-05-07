@@ -47,8 +47,6 @@ function Section5(props) {
                     </ul>
                     <button> Подробнее </button>
                 </div>
-
-
             </div>
         </div>
     );

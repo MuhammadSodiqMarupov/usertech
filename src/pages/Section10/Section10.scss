@@ -1,0 +1,46 @@
+.section10{
+  height: 1200px;
+  .container{
+    height: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid;
+    padding-top: 160px;
+    .main{
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      height: 100%;
+      margin: 0 auto;
+      width: 1000px;
+    }
+    .d{
+      display: flex;
+      flex-direction: column;
+      h3{
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 38px;
+        letter-spacing: 0.27px;
+        color: #000000;
+        span{
+          color: blue;
+        }
+      }
+      p{
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 38px;
+        letter-spacing: 0.27px;
+        color: #000000;
+      }
+    }
+      img{
+        height: 100%;
+        object-fit: contain;
+        max-width: 100%;
+      }
+  }
+}
