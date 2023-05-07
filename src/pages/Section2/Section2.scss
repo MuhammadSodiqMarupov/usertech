@@ -1,14 +1,17 @@
 .section2{
   min-height: 600px;
   background: linear-gradient(270deg, #071927 -6.98%, #045EB0 -6.97%, #03101C 122.33%);
-
   .container{
     min-height: 603px;
     max-width: 1440px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 50px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 40px;
+    padding-right: 20px;
     .top{
       padding-top: 30px;
       display: flex;

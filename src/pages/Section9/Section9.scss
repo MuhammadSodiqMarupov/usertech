@@ -1,0 +1,102 @@
+.section9{
+  min-height: 547px;
+  background: linear-gradient(270deg, #071927 0%, #045EB0 100%);
+  .container{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top:50px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:30px;
+    max-width: 1440px;
+    .bigCard{
+      width: 1110px;
+      background-color: #FFFFFF;
+      justify-content: space-around;
+      min-height: 400px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      @media (max-width: 750px) {
+        text-align: center;
+        display:flex;
+        flex-direction: column;
+      }
+    .left{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      width: 50%;
+      height: 100%;
+      @media (max-width: 700px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+      h1{
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 130%;
+        color: #010101;
+        padding-bottom: 30px;
+        border-bottom: 4px solid;
+      }
+      .inputs{
+        display: flex;
+        gap: 44px;
+        @media (max-width: 700px) {
+          width: 100%;
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+        }
+        input{
+          padding: 12px;
+          font-weight: 400;
+          font-size: 18px;
+
+          width: 285px;
+          height: 52px;
+          background: #FFFFFF;
+          border: 1px solid #CECECE;
+          border-radius: 4px;
+          @media (max-width: 750px) {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+      button{
+        width: 290px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 145%;
+        color: #FFFFFF;
+        height: 47px;
+        border:none ;
+        background: #1983FF;
+        border-radius: 2px;
+      }
+      small{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 145%;
+        color: #808080;
+        opacity: 0.5;
+      }
+    }
+      .right{
+        max-width: 313px;
+        height: 313px;
+        img{
+        height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
