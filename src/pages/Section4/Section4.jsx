@@ -1,6 +1,5 @@
 import React from 'react';
 import "./Section4.scss"
-import arrow from "../../images/Arrow.svg"
 import robo from "../../images/animationRobo.gif"
 function Section4(props) {
     return (
@@ -22,7 +21,7 @@ function Section4(props) {
                             <li>Не знали таких терминов как СTR, СРС, СРА, RОМI, ДРР  и что важно знать про интернет продвижение </li>
                         </ul>
                     </div>
-                  <div className="second">
+                  <div className="first">
                       <h3> Был сайт и реклама в интернете,  но не получили нужого результата </h3>
                       <ul>
                           <li>Запустили рекламу в Яндексе и Гугле,  но она не дала результат и сработала в минус</li>
