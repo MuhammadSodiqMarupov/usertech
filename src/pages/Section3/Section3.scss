@@ -1,5 +1,5 @@
 .section3{
-  height: 902px;
+  min-height: 902px;
   .container{
     max-width: 1440px;
     margin: 0 auto;
@@ -20,6 +20,9 @@
       .card{
         height: 275px;
         width: 310px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
         h1{
           font-weight: 500;
           font-size: 24px;
