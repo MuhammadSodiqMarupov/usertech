@@ -1,0 +1,49 @@
+.section3{
+  min-height: 902px;
+  .container{
+    max-width: 1440px;
+    margin: 0 auto;
+    background-image: url("../../images/Group 1321314068.svg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    .main{
+      display: flex;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      flex-wrap: wrap;
+      padding: 0 20px;
+      gap: 80px;
+      justify-content: center;
+      .card{
+        height: 275px;
+        width: 310px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        h1{
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 29px;
+          color: #1A4A9F;
+          padding-left: 8px;
+          border-left: 3px solid #1A4A9F;
+        }
+        .bottom{
+          display: flex;
+          justify-content: end;
+          span{
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 24px;
+            text-decoration-line: underline;
+            color: #1A4A9F;
+          cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

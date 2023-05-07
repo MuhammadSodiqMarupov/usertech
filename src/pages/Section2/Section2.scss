@@ -1,0 +1,96 @@
+.section2{
+  min-height: 600px;
+  background: linear-gradient(270deg, #071927 -6.98%, #045EB0 -6.97%, #03101C 122.33%);
+
+  .container{
+    min-height: 603px;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .top{
+      padding-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      min-height:400px;
+      @media (max-width: 750px) {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+      .left{
+        width: 500px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        h2{
+          font-size: 36px;
+          font-weight: 500;
+          line-height: 44px;
+          color: white;
+        }
+        h1{
+          font-size: 64px;
+          font-weight: 500;
+          color: white;
+        }
+        h3{
+          font-size: 32px;
+          font-weight: 500;
+          color: white;
+        }
+      }
+      .right{
+        width:500px;
+       p{
+         font-weight: 400;
+         font-size: 20px;
+         color: white;
+         line-height: 28px;
+       }
+        h1{
+          font-weight: 500;
+          font-size: 64px;
+          color: #9F9F9F;
+          line-height: 78.8px;
+        }
+        h3{
+        color: #9F9F9F;
+        }
+      }
+    }
+    .bottom{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      ul{
+        width: 74%;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        cursor: pointer;
+        .ulOther{
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
+        .ulOther1{
+          display: flex;
+          align-items: start;
+          margin-bottom: 25px;
+          gap: 30px;
+          flex-wrap: wrap;
+        }
+        li{
+          color: white;
+          list-style-image:url("../../images/ul_bullet.svg");
+        }
+      }
+    }
+  }
+}
