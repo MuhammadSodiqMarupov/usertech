@@ -1,4 +1,3 @@
-import React from 'react';
 import "./Section1.scss"
 import robo from "../../images/animationRobo.gif"
 function Section1() {
