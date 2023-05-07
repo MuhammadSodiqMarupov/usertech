@@ -47,9 +47,11 @@
           line-height: 29px;
           align-items: center;
           letter-spacing: 1.27px;
+          margin-top: 20px;
           color: #FFFFFF;
         }
         button{
+          margin-top: 20px;
           width: 303px;
           height: 59px;
           border:none;
@@ -62,7 +64,7 @@
       .right{
         img{
           height:339px;
-          max-width:452px;
+          max-width:100%;
         }
       }
     }
