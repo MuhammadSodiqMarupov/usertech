@@ -67,7 +67,7 @@ function Section12({ langIndex }) {
         </div>
         <div className="right">
           <div className="forImg">
-            <img  src={direktor} alt="" />
+            <img src={direktor} alt="Director " />
           </div>
         </div>
       </div>
