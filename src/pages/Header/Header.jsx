@@ -268,7 +268,7 @@ const Header = ({languages,langIndex,setLangIndex}) => {
               </div>
             </div>
           ))}
-          <button>{langData[langIndex].button}</button>
+          <button>{langData[langIndex]?.button}</button>
         </div>
         <div className="left">
           <img

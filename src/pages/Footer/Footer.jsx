@@ -1,7 +1,7 @@
 import "./Footer.scss";
 import logo from "../../images/white_logo.png";
 import { useNavigate } from "react-router-dom";
-import { useState,useEffect} from "react";
+import { useState, useEffect } from "react";
 const Footer = ({ langIndex }) => {
   const [navbarItems, setNavbarItems] = useState([]);
   const langData = [
@@ -187,6 +187,29 @@ const Footer = ({ langIndex }) => {
       button: "联系人",
     },
   ];
+  const footerData = [
+    {
+      descr:
+        "We have been developing websites for Russia and foreign markets since 2010. Our team consists of more than fifty employees in different countries and cities.",
+      address: "191119, St. Petersburg",
+      street: "Socialisticheskaya 21",
+      mail: "e-mail: usertech78@ya.ru",
+    },
+    {
+      descr:
+        "Мы занимаемся разработкой веб-сайтов для России и зарубежных рынков с 2010 года. Наша команда – более пятидесяти сотрудников в разных странах и городах.",
+      address: "191119, город Санкт-Петербург",
+      street: "Социалистическая 21",
+      mail: "e-mail : usertech78@ya.ru",
+    },
+    {
+      descr:
+        "我们自2010年以来一直致力于为俄罗斯和海外市场开发网站。我们的团队在不同的国家和城市拥有50多名员工。",
+      address: "圣彼得堡191119",
+      street: "Socialisticheskaya 21",
+      mail: "电子邮件：usertech78@ya.ru",
+    },
+  ];
   useEffect(() => {
     setNavbarItems(langData[langIndex].dropdowns);
     localStorage.setItem("LANG", langIndex);
@@ -230,16 +253,14 @@ const Footer = ({ langIndex }) => {
             <div className="right">
               <p>+79997103995</p>
               <p>
-                191119, город Санкт-Петербург,
-                <br /> Социалистическая 21
+                {footerData[langIndex].address}
+                <br />{footerData[langIndex].street}
               </p>
-              <p>e-mail : usertech78@ya.ru</p>
+              <p>{footerData[langIndex].mail}</p>
             </div>
           </div>
           <div className="bottom">
-            Мы занимаемся разработкой веб-сайтов для России и зарубежных рынков
-            с 2010 года. Наша команда – более пятидесяти сотрудников в разных
-            странах и городах.
+            {footerData[langIndex].descr}
           </div>
         </div>
       </div>

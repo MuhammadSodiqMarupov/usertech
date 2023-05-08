@@ -236,12 +236,12 @@ function App() {
                   renderBottomCenterControls={false}
                   renderCenterLeftControls={({ previousSlide }) => (
                     <button onClick={previousSlide} className="btn-swiper">
-                      <i class="ri-arrow-left-line"></i>
+                      <i className="ri-arrow-left-line"></i>
                     </button>
                   )}
                   renderCenterRightControls={({ nextSlide }) => (
                     <button onClick={nextSlide} className="btn-swiper btn-2">
-                      <i class="ri-arrow-right-line"></i>
+                      <i className="ri-arrow-right-line"></i>
                     </button>
                   )}
                 >
@@ -312,17 +312,15 @@ function App() {
                   </div>
                 </Carousel>
               </div>
-              <Header />
-                 <Section1/>
-         <Section4 langIndex={langIndex} />
+              <Section4 langIndex={langIndex} />
               <Section5 langIndex={langIndex} />
               <Section6 langIndex={langIndex} />
               <Section7 langIndex={langIndex} />
               <Section8 langIndex={langIndex} />
               <Section9 langIndex={langIndex} />
               <Section10 langIndex={langIndex} />
-        <Section11/>
-        <Section12/>
+              <Section11 />
+              <Section12 />
             </>
           }
         />
