@@ -1,5 +1,5 @@
 import "./Section12.scss";
-import direktor from "../../images/div.ytp-cued-thumbnail-overlay-image.svg";
+import direktor from "../../images/div.ytp-cued-thumbnail-overlay-image.webp";
 function Section12({ langIndex }) {
     const langData = [
         {
@@ -43,7 +43,7 @@ function Section12({ langIndex }) {
         </div>
         <div className="right">
           <div className="forImg">
-            <img src={direktor} alt="" />
+            <img src={direktor} alt="Director " />
           </div>
         </div>
       </div>
