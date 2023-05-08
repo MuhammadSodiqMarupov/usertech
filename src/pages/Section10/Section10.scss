@@ -1,3 +1,6 @@
+.section10 {
+  min-height: 1200px;
+  .container {
 .section10{
   min-height: 900px;
   .container{
@@ -7,9 +10,7 @@
     display: flex;
     flex-direction: column;
     padding-top: 160px;
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-bottom: 30px;
+    .main {
     .main{
       display: flex;
       flex-direction: column;
@@ -18,25 +19,36 @@
       margin: 0 auto;
       width: 100%;
     }
-    .d{
+    h1 {
+      @media (max-width: 500px) {
+        text-align: center;
+      }
+    }
+    .d {
       display: flex;
       flex-direction: column;
-      h3{
+      h3 {
         font-weight: 400;
         font-size: 20px;
         line-height: 38px;
         letter-spacing: 0.27px;
+        @media (max-width: 500px) {
+          text-align: center;
+        }
         color: #000000;
-        span{
+        span {
           color: blue;
         }
       }
-      p{
+      p {
         font-weight: 400;
         font-size: 20px;
         line-height: 38px;
         letter-spacing: 0.27px;
         color: #000000;
+        @media (max-width: 500px) {
+          text-align: center;
+        }
       }
     }
       img{

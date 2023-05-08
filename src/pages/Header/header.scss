@@ -29,7 +29,6 @@
         right: 0 !important;
     }
     .hamburger {
-      
       display: none;
       right: -100vw;
       top: 0;
@@ -37,6 +36,9 @@
       position: fixed;
       background-color: #f2f2f2;
       height: 100vh;
+      .p-b {
+        padding-bottom: 5px;
+      }
       .ri-close-line {
         position: absolute;
         right: 2%;

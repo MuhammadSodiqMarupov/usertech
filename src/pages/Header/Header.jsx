@@ -1,45 +1,11 @@
 import "./header.scss";
 import logo from "../../images/logo.svg";
-import "./header.scss";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
-const Header = () => {
+const Header = ({languages,langIndex,setLangIndex}) => {
   const navigate = useNavigate();
-  const languages = ["En", "Ru"];
   const langData = [
-    {
-      dropdowns: [
-        {
-          title: "Главная",
-          link: "/",
-          body: [],
-          dropdown: false,
-        },
-        {
-          title: "Студия",
-          body: ["Алгоритм работы"],
-          dropdown: true,
-        },
-        {
-          title: "Услуги",
-          body: ["Сайты", "Приложения"],
-          dropdown: true,
-        },
-        {
-          title: "Блог",
-          link: "",
-          body: [],
-          dropdown: false,
-        },
-        {
-          title: "Вакагсии",
-          link: "/jobs",
-          body: [],
-          dropdown: false,
-        },
-      ],
-    },
     {
       dropdowns: [
         {
@@ -97,11 +63,131 @@ const Header = () => {
           dropdown: false,
         },
       ],
+      button:"Contacts"
+    },
+    {
+      dropdowns: [
+        {
+          title: "Главная",
+          link: "/",
+          body: [],
+          dropdown: false,
+        },
+        {
+          title: "Студия",
+          link: "/",
+          body: [
+            {
+              title: "Алгоритм работы",
+              page: "/algorithm",
+            },
+          ],
+          dropdown: true,
+        },
+        {
+          title: "Услуги",
+          link: "",
+          body: [
+            {
+              title: "Сайты",
+              page: "/sites",
+            },
+            {
+              title: "Приложения",
+              page: "/applications",
+            },
+            {
+              title: "Продвижение",
+              page: "/promotion",
+            },
+            {
+              title: "Искусственный интеллект",
+              page: "/AI",
+            },
+            {
+              title: "Финтеч",
+              page: "/Fintech",
+            },
+          ],
+          dropdown: true,
+        },
+        {
+          title: "Блог",
+          link: "/blog",
+          body: [],
+          dropdown: false,
+        },
+        {
+          title: "Вакагсии",
+          link: "/jobs",
+          body: [],
+          dropdown: false,
+        },
+      ],
+      button:'Контакты'
+    },
+
+    {
+      dropdowns: [
+        {
+          title: "家",
+          link: "/",
+          body: [],
+          dropdown: false,
+        },
+        {
+          title: "工作室",
+          body: [
+            {
+              title: "工作算法",
+              page: "/algorithm",
+            },
+          ],
+          dropdown: true,
+        },
+        {
+          title: "服务",
+          link: "/",
+          body: [
+            {
+              title: "站点",
+              page: "/sites",
+            },
+            {
+              title: "应用",
+              page: "/applications",
+            },
+            {
+              title: "晋升",
+              page: "/promotion",
+            },
+            {
+              title: "人工智能",
+              page: "/AI",
+            },
+            {
+              title: "金融科技",
+              page: "/Fintech",
+            },
+          ],
+          dropdown: true,
+        },
+        {
+          title: "博客",
+          link: "/blog",
+          body: [],
+          dropdown: false,
+        },
+        {
+          title: "工作",
+          link: "/jobs",
+          body: [],
+          dropdown: false,
+        },
+      ],
+      button:'联系人'
     },
   ];
-  const [langIndex, setLangIndex] = useState(
-    JSON.parse(localStorage.getItem("LANG")) ?? 1
-  );
   const [navbarItems, setNavbarItems] = useState([]);
   useEffect(() => {
     setNavbarItems(langData[langIndex].dropdowns);
@@ -111,10 +197,12 @@ const Header = () => {
     setNavbarItems(langData[langIndex].dropdowns);
   }, []);
   const changeLang = () => {
-    if (languages.length - 1 <= langIndex) {
-      setLangIndex((prev) => --prev);
+    console.log(langIndex);
+    console.log(languages.length);
+    if (langIndex>=(languages.length-1)) {
+      setLangIndex(0);
     } else {
-      setLangIndex((prev) => ++prev);
+      setLangIndex(prev=>++prev);
     }
   };
   return (
@@ -139,6 +227,8 @@ const Header = () => {
                         document
                           .getElementById("body-" + indexInc)
                           .classList.toggle("active");
+                      } else {
+                        navigate(item.link);
                       }
                     }}
                   >
@@ -154,7 +244,7 @@ const Header = () => {
                             .classList.toggle("active");
                         }
                       }}
-                      class="ri-arrow-down-s-line"
+                      className="ri-arrow-down-s-line"
                     ></i>
                   ) : (
                     ""
@@ -163,7 +253,13 @@ const Header = () => {
                 {item.dropdown ? (
                   <div id={"body-" + (index + 1)} className="item_body">
                     {item.body.map((body, index_body) => (
-                      <p key={index_body}>{body.title}</p>
+                      <p
+                        className="p-b"
+                        onClick={() => navigate(body.page)}
+                        key={index_body}
+                      >
+                        {body.title}
+                      </p>
                     ))}
                   </div>
                 ) : (
@@ -172,7 +268,7 @@ const Header = () => {
               </div>
             </div>
           ))}
-          <button>Contacts</button>
+          <button>{langData[langIndex].button}</button>
         </div>
         <div className="left">
           <img
@@ -192,12 +288,18 @@ const Header = () => {
                   onClick={() => navigate(item.link)}
                 >
                   {item.title}{" "}
-                  {item.dropdown ? <i class="ri-arrow-down-s-line"></i> : ""}
+                  {item.dropdown ? (
+                    <i className="ri-arrow-down-s-line"></i>
+                  ) : (
+                    ""
+                  )}
                 </button>
                 {item.dropdown ? (
                   <div className="dropdown-content">
                     {item.body.map((item1, index1) => (
-                      <p onClick={()=>navigate(item1.page)} key={index1}>{item1.title}</p>
+                      <p onClick={() => navigate(item1.page)} key={index1}>
+                        {item1.title}
+                      </p>
                     ))}
                   </div>
                 ) : (
@@ -208,14 +310,14 @@ const Header = () => {
           </div>
           <div className="more">
             <p onClick={changeLang}>{languages[langIndex]}</p>
-            <button>Contacts</button>
+            <button>{langData[langIndex].button}</button>
             <i
               onClick={(e) => {
                 const hamburgerDIV = document.querySelector(".hamburger");
                 hamburgerDIV.classList.toggle("hamburger_active");
               }}
               id="hamburger"
-              class="ri-menu-fill"
+              className="ri-menu-fill"
             ></i>
           </div>
         </div>
