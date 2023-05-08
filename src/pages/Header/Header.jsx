@@ -197,8 +197,6 @@ const Header = ({languages,langIndex,setLangIndex}) => {
     setNavbarItems(langData[langIndex].dropdowns);
   }, []);
   const changeLang = () => {
-    console.log(langIndex);
-    console.log(languages.length);
     if (langIndex>=(languages.length-1)) {
       setLangIndex(0);
     } else {
@@ -268,7 +266,7 @@ const Header = ({languages,langIndex,setLangIndex}) => {
               </div>
             </div>
           ))}
-          <button>{langData[langIndex]?.button}</button>
+          <button>{langData[langIndex-1]?.button}</button>
         </div>
         <div className="left">
           <img
