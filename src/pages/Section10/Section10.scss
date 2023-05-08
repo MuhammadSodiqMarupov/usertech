@@ -1,6 +1,6 @@
-.section10{
-  height: 1200px;
-  .container{
+.section10 {
+  min-height: 1200px;
+  .container {
     height: 100%;
     max-width: 1440px;
     margin: 0 auto;
@@ -8,39 +8,51 @@
     flex-direction: column;
     border: 5px solid;
     padding-top: 160px;
-    .main{
+    .main {
       display: flex;
       flex-direction: column;
       gap: 30px;
       height: 100%;
       margin: 0 auto;
-      width: 1000px;
+      width: 100%;
     }
-    .d{
+    h1 {
+      @media (max-width: 500px) {
+        text-align: center;
+      }
+    }
+    .d {
       display: flex;
       flex-direction: column;
-      h3{
+      h3 {
         font-weight: 400;
         font-size: 20px;
         line-height: 38px;
         letter-spacing: 0.27px;
+        @media (max-width: 500px) {
+          text-align: center;
+        }
         color: #000000;
-        span{
+        span {
           color: blue;
         }
       }
-      p{
+      p {
         font-weight: 400;
         font-size: 20px;
         line-height: 38px;
         letter-spacing: 0.27px;
         color: #000000;
+        @media (max-width: 500px) {
+          text-align: center;
+        }
       }
     }
-      img{
-        height: 100%;
-        object-fit: contain;
-        max-width: 100%;
-      }
+    img {
+      height: 100%;
+      object-fit: contain;
+      max-width: 100%;
+      padding: 20px;
+    }
   }
 }
