@@ -9,6 +9,65 @@
   background-color: transparent;
 }
 :root {
-  --black:#141414;
-  --orange:#F08200;
+  --black: #141414;
+  --orange: #f08200;
+}
+.flying_items {
+  position: fixed;
+  right: 10vh;
+  top: 40vh;
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.flying_items img {
+  width: 80px;
+  object-fit: contain;
+  height: 100px;
+}
+@keyframes tg-animation {
+  from {
+    opacity: 0.5;
+    transform: scale(2);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2.2);
+  }
+}
+
+.spinner-wrap {
+  position: relative;
+}
+.spinner-item {
+  border: 1px solid rgba(77,139,237,255);
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: zoom 2s linear 0.75s infinite;
+}
+.spinner-item--2 {
+  animation-delay: 1.25s;
+}
+.spinner-item--3 {
+  animation-delay: 1.75s;
+}
+@keyframes zoom {
+  0% {
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
 }
