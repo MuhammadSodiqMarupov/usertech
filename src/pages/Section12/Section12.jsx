@@ -33,6 +33,7 @@ function Section12({ langIndex }) {
       linkspan: "处理个人数据",
     },
   ];
+  
   return (
     <div className="section12">
       <div className="container">
@@ -66,7 +67,7 @@ function Section12({ langIndex }) {
         </div>
         <div className="right">
           <div className="forImg">
-            <img src={direktor} alt="" />
+            <img  src={direktor} alt="" />
           </div>
         </div>
       </div>
