@@ -18,6 +18,8 @@ import Section7 from "./pages/Section7/Section7";
 import Section8 from "./pages/Section8/Section8";
 import Section9 from "./pages/Section9/Section9";
 import Section10 from "./pages/Section10/Section10";
+import Section11 from "./pages/Section11/Section11";
+import Section12 from "./pages/Section12/Section12";
 function App() {
   const [languages, setLanguages] = useState(["En", "Ru"]);
   const [langIndex, setLangIndex] = useState(0);
@@ -68,7 +70,8 @@ function App() {
         <Section8/>
         <Section9/>
         <Section10/>
-
+        <Section11/>
+        <Section12/>
             </>
           }
         />
