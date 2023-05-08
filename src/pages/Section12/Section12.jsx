@@ -33,6 +33,7 @@ function Section12({ langIndex }) {
       linkspan: "处理个人数据",
     },
   ];
+  
   return (
     <div className="section12">
       <div className="container">

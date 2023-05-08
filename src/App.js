@@ -320,7 +320,7 @@ function App() {
               <Section9 langIndex={langIndex} />
               <Section10 langIndex={langIndex} />
               <Section11 />
-              <Section12 />
+              <Section12 langIndex={langIndex}/>
             </>
           }
         />
