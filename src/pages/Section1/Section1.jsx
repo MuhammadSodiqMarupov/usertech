@@ -27,7 +27,7 @@ function Section1({ langIndex }) {
     {
       title: "Сайт для вашего бизнеса под ключ",
       descr:
-        "МЫ АГЕНСТВО ПОЛНОГО ЦИКЛА для IT продуктов.  Создаем простые решения для сложных задач вашего проекта. Разработаем IT продукт, настроим рекламу  и построем из этого стабильную систему  по привлечению клиентов",
+        "МЫ АГЕНСТВО ПОЛНОГО ЦИКЛА для IT продуктов. Создаем простые решения для сложных задач вашего проекта. Разработаем IT продукт, настроим рекламу и построем из этого стабильную систему по привлечению клиентов",
       button: " Узнать подробнее ",
       card1: {
         title: "1к+",
@@ -70,41 +70,40 @@ function Section1({ langIndex }) {
     },
   ];
   return (
-    <div className="section1">
-      <div className="container">
-        <div className="top">
-          <div className="left">
-            <h1> {langData[langIndex].title}</h1>
-            <p> {langData[langIndex].descr}</p>
-            <button> {langData[langIndex].button} </button>
-          </div>
-          <div className="right">
-            <img src={robo} alt="" />
-          </div>
-        </div>
-        <div className="bottom">
-          <div className="card1">
-            <h1>{langData[langIndex].card1.title}</h1>
-            <p> {langData[langIndex].card1.descr}</p>
-          </div>
+  <div className="section1">
+   <div className="container">
+     <div className="top">
+       <div className="left">
+         <h1> {langData[langIndex]?.title}</h1>
+         <p> {langData[langIndex]?.descr}</p>
+         <button> {langData[langIndex]?.button} </button>
+       </div>
+       <div className="right">
+         <img src={robo} alt="" />
+       </div>
+     </div>
+     <div className="bottom">
+       <div className="card1">
+         <h1>{langData[langIndex].card1?.title}</h1>
+         <p> {langData[langIndex].card1?.descr}</p>
+       </div>
+       <div className="card1">
+         <h1> {langData[langIndex].card2?.title} </h1>
+         <p> {langData[langIndex].card2?.descr} </p>
+       </div>
 
-          <div className="card1">
-            <h1> {langData[langIndex].card2.title} </h1>
-            <p> {langData[langIndex].card2.descr} </p>
-          </div>
+       <div className="card1">
+       <h1> {langData[langIndex].card3.title} </h1>
+         <p> {langData[langIndex].card3.descr} </p>
+       </div>
 
-          <div className="card1">
-          <h1> {langData[langIndex].card3.title} </h1>
-            <p> {langData[langIndex].card3.descr} </p>
-          </div>
-
-          <div className="card4">
-          <h1> {langData[langIndex].card4.title} </h1>
-            <p> {langData[langIndex].card4.descr} </p>
-          </div>
-        </div>
-      </div>
-    </div>
+       <div className="card4">
+       <h1> {langData[langIndex].card4.title} </h1>
+         <p> {langData[langIndex].card4.descr} </p>
+       </div>
+     </div>
+   </div>
+ </div>
   );
 }
 
