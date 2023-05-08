@@ -9,6 +9,7 @@
     flex-direction: column;
     padding-right: 20px;
     padding-left: 20px;
+
     padding-bottom: 40px;
     margin-top: 30px;
     gap: 30px;
@@ -26,6 +27,7 @@
       flex-wrap: wrap;
         .left{
           display: flex;
+          justify-content: center;
           gap: 40px;
           width: 900px;
           flex-wrap: wrap;
@@ -53,6 +55,7 @@
       .right{
         display: flex;
         align-items: center;
+        justify-content: center;
         width: 400px;
         img{
           max-width: 321px;

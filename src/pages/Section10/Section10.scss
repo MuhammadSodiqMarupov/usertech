@@ -1,14 +1,17 @@
 .section10 {
   min-height: 1200px;
   .container {
+.section10{
+  min-height: 900px;
+  .container{
     height: 100%;
     max-width: 1440px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    border: 5px solid;
     padding-top: 160px;
     .main {
+    .main{
       display: flex;
       flex-direction: column;
       gap: 30px;
@@ -48,11 +51,9 @@
         }
       }
     }
-    img {
-      height: 100%;
-      object-fit: contain;
-      max-width: 100%;
-      padding: 20px;
+      img{
+        height: 100%;
+        width: 100%;
     }
   }
 }

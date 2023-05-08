@@ -23,6 +23,8 @@ import Applications from "./pages/Applications/Applications";
 import Fintech from "./pages/Fintech/Fintech";
 import Footer from "./pages/Footer/Footer";
 import Carousel from "nuka-carousel";
+import Section11 from "./pages/Section11/Section11";
+import Section12 from "./pages/Section12/Section12";
 function App() {
   const languages = ["En", "Ru", "Chine"];
   const [slides, setSlides] = useState([]);
@@ -310,13 +312,17 @@ function App() {
                   </div>
                 </Carousel>
               </div>
-              <Section4 langIndex={langIndex} />
+              <Header />
+                 <Section1/>
+         <Section4 langIndex={langIndex} />
               <Section5 langIndex={langIndex} />
               <Section6 langIndex={langIndex} />
               <Section7 langIndex={langIndex} />
               <Section8 langIndex={langIndex} />
               <Section9 langIndex={langIndex} />
               <Section10 langIndex={langIndex} />
+        <Section11/>
+        <Section12/>
             </>
           }
         />
