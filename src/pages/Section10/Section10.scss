@@ -1,20 +1,22 @@
 .section10{
-  height: 1200px;
+  min-height: 900px;
   .container{
     height: 100%;
     max-width: 1440px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    border: 5px solid;
     padding-top: 160px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 30px;
     .main{
       display: flex;
       flex-direction: column;
       gap: 30px;
       height: 100%;
       margin: 0 auto;
-      width: 1000px;
+      width: 100%;
     }
     .d{
       display: flex;
@@ -39,8 +41,7 @@
     }
       img{
         height: 100%;
-        object-fit: contain;
-        max-width: 100%;
-      }
+        width: 100%;
+    }
   }
 }
