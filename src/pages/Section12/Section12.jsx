@@ -1,5 +1,5 @@
 import "./Section12.scss";
-import direktor from "../../images/div.ytp-cued-thumbnail-overlay-image.webp";
+import direktor from "../../images/div.ytp-cued-thumbnail-overlay-image.svg";
 function Section12({ langIndex }) {
     const langData = [
         {
