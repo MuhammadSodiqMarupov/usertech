@@ -75,6 +75,9 @@ function Section3(props) {
                         </div>
                     </div>
 
+
+                    
+
                     <div className="card">
                         <h1> Приложения </h1>
                         <div className="between">
