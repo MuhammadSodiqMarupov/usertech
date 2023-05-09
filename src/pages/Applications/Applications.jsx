@@ -1,16 +1,31 @@
 import "./Applications.scss";
-const Applications = () => {
+const Applications = ({ langIndex }) => {
+  const langData = [
+    {
+      title: "Services and prices by application",
+      descr:
+        "You can choose both individual application development work and complex packages, where we perform all the necessary work on a turnkey basis. If you do not know where to start - ask our specialist, it's free!",
+      title2: "WEBSITE PROMOTION, SEO",
+    },
+    {
+      title: "Услуги и цены на разработку приложений",
+      descr:
+        "Вы можете выбрать как индивидуальную работу по разработке приложения, так и комплексные пакеты, где мы выполняем все необходимые работы под ключ. Если вы не знаете, с чего начать - спросите нашего специалиста, это бесплатно!",
+      title2: "ПРОДВИЖЕНИЕ САЙТОВ, SEO",
+    },
+    {
+      title: "应用开发服务和价格",
+      descr:
+        "您可以选择个性化的应用开发服务，或者选择我们提供的全套服务。如果您不知道从何入手，请咨询我们的专家，咨询是免费的！",
+      title2: "网站推广SEO",
+    },
+  ];
   return (
     <div className="Applications">
       <div className="container">
-        <h1>Services and prices by application</h1>
-        <p>
-          You can choose both individual application development work and
-          complex packages, where we perform all the necessary work on a turnkey
-          basis. If you do not know where to start - ask our specialist, it's
-          free!
-        </p>
-        <h1>WEBSITE PROMOTION, SEO</h1>
+        <h1>{langData[langIndex]?.title}</h1>
+        <p>{langData[langIndex]?.descr}</p>
+        <h1>{langData[langIndex]?.title2}</h1>
         <div className="content">
           <div
             className="card"
@@ -253,7 +268,6 @@ const Applications = () => {
             <div className="card_descr">SPECILAZITION:Project management</div>
             <button className="card_button">Detail</button>
           </div>
-          
         </div>
       </div>
     </div>

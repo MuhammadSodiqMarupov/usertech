@@ -1,6 +1,8 @@
 import "./Section1.scss";
 import robo from "../../images/animationRobo.gif";
+import { useNavigate } from "react-router-dom";
 function Section1({ langIndex }) {
+  const navigate= useNavigate();
   const langData = [
     {
       title: "Website for your turnkey business",
@@ -76,7 +78,7 @@ function Section1({ langIndex }) {
        <div className="left">
          <h1> {langData[langIndex]?.title}</h1>
          <p> {langData[langIndex]?.descr}</p>
-         <button> {langData[langIndex]?.button} </button>
+         <button onClick={()=>navigate("/more")}> {langData[langIndex]?.button} </button>
        </div>
        <div className="right">
          <img src={robo} alt="" />

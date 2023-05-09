@@ -1,14 +1,27 @@
 import "./Fintech.scss";
-const Fintech = () => {
+const Fintech = ({ langIndex }) => {
+  const langData = [
+    {
+      title: "Fintech services and prices",
+      descr:
+        "You can choose both individual site promotion works and complex packages, where we perform all the necessary work on a turnkey basis. If you do not know where to start - ask our specialist, it's free!",
+    },
+    {
+      title: "Услуги и цены на финтех",
+      descr:
+        "Вы можете выбрать как индивидуальную работу по продвижению сайта, так и комплексные пакеты, где мы выполняем все необходимые работы под ключ. Если вы не знаете, с чего начать - спросите нашего специалиста, это бесплатно!",
+    },
+    {
+      title: "金融科技服务和价格",
+      descr:
+        "您可以选择个性化的网站推广服务，或者选择我们提供的全套服务。如果您不知道从何入手，请咨询我们的专家，咨询是免费的！",
+    },
+  ];
   return (
     <div className="fintech">
       <div className="container">
-        <h1>Fintech services and prices</h1>
-        <p>
-          You can choose both individual site promotion works and complex
-          packages, where we perform all the necessary work on a turnkey basis.
-          If you do not know where to start - ask our specialist, it's free!
-        </p>
+        <h1>{langData[langIndex].title}</h1>
+        <p>{langData[langIndex].descr}</p>
         <div className="content">
           <div
             className="card"

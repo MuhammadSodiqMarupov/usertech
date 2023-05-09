@@ -25,6 +25,7 @@ import Footer from "./pages/Footer/Footer";
 import Carousel from "nuka-carousel";
 import Section11 from "./pages/Section11/Section11";
 import Section12 from "./pages/Section12/Section12";
+import More from "./pages/More/More";
 import Contact from "./pages/Contact/Contact";
 function App() {
   const languages = ["En", "Ru", "Chine"];
@@ -231,12 +232,15 @@ function App() {
             <>
               <Section1 langIndex={langIndex} />
               <Section2 langIndex={langIndex} />
-              <Section3 />
+              <Section3 langIndex={langIndex} />
               <div className="swiper_container">
                 <Carousel
                   renderBottomCenterControls={false}
                   renderCenterLeftControls={({ previousSlide }) => (
-                    <button onClick={previousSlide} className="btn-swiper">
+                    <button
+                      onClick={previousSlide}
+                      className="btn-swiper btn-1"
+                    >
                       <i className="ri-arrow-left-line"></i>
                     </button>
                   )}
@@ -320,75 +324,29 @@ function App() {
               <Section8 langIndex={langIndex} />
               <Section9 langIndex={langIndex} />
               <Section10 langIndex={langIndex} />
-              <Section11 />
-              <Section12 langIndex={langIndex}/>
+              <Section11 langIndex={langIndex} />
+              <Section12 langIndex={langIndex} />
             </>
           }
         />
-        <Route
-          path="/jobs"
-          element={
-            <>
-              <Jobs />
-            </>
-          }
-        />
+        <Route path="/jobs" element={<Jobs langIndex={langIndex} />} />
         <Route
           path="/algorithm"
-          element={
-            <>
-              <Algorithm />
-            </>
-          }
+          element={<Algorithm langIndex={langIndex} />}
         />
-        <Route
-          path="/sites"
-          element={
-            <>
-              <Sites />
-            </>
-          }
-        />
-        <Route
-          path="/blog"
-          element={
-            <>
-              <Blog />
-            </>
-          }
-        />
-        <Route
-          path="/AI"
-          element={
-            <>
-              <Ai />
-            </>
-          }
-        />
+        <Route path="/more" element={<More />} />
+        <Route path="/sites" element={<Sites langIndex={langIndex} />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/AI" element={<Ai langIndex={langIndex} />} />
         <Route
           path="/promotion"
-          element={
-            <>
-              <Promotion />
-            </>
-          }
+          element={<Promotion langIndex={langIndex} />}
         />
         <Route
           path="/applications"
-          element={
-            <>
-              <Applications />
-            </>
-          }
+          element={<Applications langIndex={langIndex} />}
         />
-        <Route
-          path="/Fintech"
-          element={
-            <>
-              <Fintech />
-            </>
-          }
-        />
+        <Route path="/Fintech" element={<Fintech langIndex={langIndex} />} />
         <Route path="/contact" element={<Contact/>}/>
       </Routes>
       <Footer langIndex={langIndex} />
