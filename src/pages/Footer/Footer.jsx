@@ -221,47 +221,45 @@ const Footer = ({ langIndex }) => {
   return (
     <div className="footer">
       <div className="container">
-        <div className="content">
+        <div className="left">
           <div className="top">
-            <img src={logo} alt="Logo" />
+            <img src={logo} alt=""/>
             {navbarItems.map((item, index) => (
-              <div key={index} className="dropdown">
-                <button
-                  className="dropdown-button"
-                  onClick={() => navigate(item.link)}
-                >
-                  {item.title}{" "}
+                <div key={index} className="dropdown">
+                  <button
+                      className="dropdown-button"
+                      onClick={() => navigate(item.link)}
+                  >
+                    {item.title}{" "}
+                    {item.dropdown ? (
+                        <i className="ri-arrow-down-s-line"></i>
+                    ) : (
+                        ""
+                    )}
+                  </button>
                   {item.dropdown ? (
-                    <i className="ri-arrow-down-s-line"></i>
+                      <div className="dropdown-content">
+                        {item.body.map((item1, index1) => (
+                            <p onClick={() => navigate(item1.page)} key={index1}>
+                              {item1.title}
+                            </p>
+                        ))}
+                      </div>
                   ) : (
-                    ""
+                      ""
                   )}
-                </button>
-                {item.dropdown ? (
-                  <div className="dropdown-content">
-                    {item.body.map((item1, index1) => (
-                      <p onClick={() => navigate(item1.page)} key={index1}>
-                        {item1.title}
-                      </p>
-                    ))}
-                  </div>
-                ) : (
-                  ""
-                )}
-              </div>
+                </div>
             ))}
-            <div className="right">
-              <p>+79997103995</p>
-              <p>
-                {footerData[langIndex].address}
-                <br />{footerData[langIndex].street}
-              </p>
-              <p>{footerData[langIndex].mail}</p>
-            </div>
           </div>
           <div className="bottom">
-            {footerData[langIndex].descr}
+            <p> Мы занимаемся разработкой веб-сайтов для России и зарубежных рынков с 2010 года. Наша команда – более пятидесяти сотрудников в разных странах и городах. </p>
           </div>
+        </div>
+        <div className="right">
+          <h1> +79997103995 </h1>
+          <p> 191119, город Санкт-Петербург,</p>
+          <p> Социалистическая 21  </p>
+          <small> e-mail : usertech78@ya.ru </small>
         </div>
       </div>
     </div>

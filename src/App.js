@@ -26,6 +26,7 @@ import Carousel from "nuka-carousel";
 import Section11 from "./pages/Section11/Section11";
 import Section12 from "./pages/Section12/Section12";
 import More from "./pages/More/More";
+import Contact from "./pages/Contact/Contact";
 function App() {
   const languages = ["En", "Ru", "Chine"];
   const [slides, setSlides] = useState([]);
@@ -346,6 +347,7 @@ function App() {
           element={<Applications langIndex={langIndex} />}
         />
         <Route path="/Fintech" element={<Fintech langIndex={langIndex} />} />
+        <Route path="/contact" element={<Contact/>}/>
       </Routes>
       <Footer langIndex={langIndex} />
     </div>

@@ -308,7 +308,7 @@ const Header = ({languages,langIndex,setLangIndex}) => {
           </div>
           <div className="more">
             <p onClick={changeLang}>{languages[langIndex]}</p>
-            <button>{langData[langIndex].button}</button>
+            <button onClick={()=>navigate("/contact")}>{langData[langIndex].button}</button>
             <i
               onClick={(e) => {
                 const hamburgerDIV = document.querySelector(".hamburger");
