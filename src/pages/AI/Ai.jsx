@@ -1,14 +1,27 @@
 import "./Ai.scss";
-const Ai = () => {
+const Ai = ({ langIndex }) => {
+  const langData = [
+    {
+      title: "Services and prices for AI",
+      descr:
+        "You can choose both individual AI development work and complex packages, where we perform all the necessary work on a turnkey basis. If you do not know where to start - ask our specialist, it's free!",
+    },
+    {
+      title: "Услуги и цены на искусственный интеллект",
+      descr:
+        "Вы можете выбрать как индивидуальную работу по разработке ИИ, так и комплексные пакеты, где мы выполняем все необходимые работы под ключ. Если вы не знаете, с чего начать - спросите нашего специалиста, это бесплатно!",
+    },
+    {
+      title: "人工智能服务和价格",
+      descr:
+        "您可以选择个性化的人工智能开发服务，或者选择我们提供的全套服务。如果您不知道从何入手，请咨询我们的专家，咨询是免费的！",
+    },
+  ];
   return (
     <div className="Ai">
       <div className="container">
-        <h1>Services and prices for AI</h1>
-        <p>
-          You can choose both individual AI development work and complex
-          packages, where we perform all the necessary work on a turnkey basis.
-          If you do not know where to start - ask our specialist, it's free!
-        </p>
+        <h1>{langData[langIndex].title}</h1>
+        <p>{langData[langIndex].descr}</p>
         <div className="content">
           <div
             className="card"

@@ -1,16 +1,32 @@
 import "./Promotion.scss";
 
-const Promotion = () => {
+const Promotion = ({ langIndex }) => {
+  const langData = [
+    {
+      title: "Promotion services and prices",
+      descr:
+        "You can choose both individual site promotion works and complex packages, where we perform all the necessary work on a turnkey basis. If you do not know where to start - ask our specialist, it's free!",
+      title2: "WEBSITE PROMOTION, SEO",
+    },
+    {
+      title: "Услуги и цены на продвижение сайтов",
+      descr:
+        "Вы можете выбрать как индивидуальную работу по продвижению сайта, так и комплексные пакеты, где мы выполняем все необходимые работы под ключ. Если вы не знаете, с чего начать - спросите нашего специалиста, это бесплатно!",
+      title2: "ПРОДВИЖЕНИЕ САЙТОВ, SEO",
+    },
+    {
+      title: "网站推广服务和价格",
+      descr:
+        "您可以选择个性化的网站推广服务，或者选择我们提供的全套服务。如果您不知道从何入手，请咨询我们的专家，咨询是免费的！",
+      title2: "网站推广 SEO",
+    },
+  ];
   return (
     <div className="promotion">
       <div className="container">
-        <h1>Promotion services and prices</h1>
-        <p>
-          You can choose both individual site promotion works and complex
-          packages, where we perform all the necessary work on a turnkey basis.
-          If you do not know where to start - ask our specialist, it's free!
-        </p>
-        <h1>WEBSITE PROMOTION, SEO</h1>
+        <h1>{langData[langIndex].title}</h1>
+        <p>{langData[langIndex].descr}</p>
+        <h1>{langData[langIndex].title2}</h1>
         <div className="content">
           <div
             className="card"
