@@ -25,6 +25,7 @@ import Footer from "./pages/Footer/Footer";
 import Carousel from "nuka-carousel";
 import Section11 from "./pages/Section11/Section11";
 import Section12 from "./pages/Section12/Section12";
+import Contact from "./pages/Contact/Contact";
 function App() {
   const languages = ["En", "Ru", "Chine"];
   const [slides, setSlides] = useState([]);
@@ -388,6 +389,7 @@ function App() {
             </>
           }
         />
+        <Route path="/contact" element={<Contact/>}/>
       </Routes>
       <Footer langIndex={langIndex} />
     </div>
