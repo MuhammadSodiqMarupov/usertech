@@ -1,15 +1,18 @@
-import "./Section6.scss";
 import rakete from "../../images/coinspot.png.svg";
 import green from "../../images/beincrypto.png.svg";
 import desentr from "../../images/decentr.png.svg";
 import fork from "../../images/forklog.png.svg";
-import vedomosti from "../../images/vedomosti.png.svg";
-import green1 from "../../images/rbk.png.svg";
-import varlamov from "../../images/varlamov_youtube.png.svg";
-import lyudi from "../../images/the_ludi_youtube.png.svg";
-import lyudi2 from "../../images/ludi_pro_youtube.png.svg";
-import lebadev from "../../images/lebedev_youtube.png.svg";
-function Section6({ langIndex }) {
+import vedomosti from "../../images/vedomosti.png.webp";
+import green1 from "../../images/rbk.png.webp";
+import varlamov from "../../images/varlamov_youtube.png.webp";
+import lyudi from "../../images/the_ludi_youtube.png.webp";
+import lyudi2 from "../../images/ludi_pro_youtube.png.webp";
+import lebadev from "../../images/lebedev_youtube.png.webp";
+import "./Section6.scss";
+import { useContext } from "react";
+import { LanguageContext } from "../../context/contextCreation";
+function Section6() {
+  const {langIndex}=useContext(LanguageContext);
   const langData = [
     {
       title: "Get Direct Access to the Best PR Resources",

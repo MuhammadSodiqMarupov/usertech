@@ -1,9 +1,11 @@
-import "./header.scss";
-import logo from "../../images/logo.svg";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
-const Header = ({languages,langIndex,setLangIndex}) => {
+import logo from "../../images/logo.svg";
+import { useState, useEffect } from "react";
+import { useContext } from "react";
+import "./header.scss";
+import { LanguageContext } from "../../context/contextCreation";
+const Header = ({ languages, setLangIndex }) => {
+  const { langIndex } = useContext(LanguageContext);
   const navigate = useNavigate();
   const langData = [
     {
@@ -63,7 +65,7 @@ const Header = ({languages,langIndex,setLangIndex}) => {
           dropdown: false,
         },
       ],
-      button:"Contacts"
+      button: "Contacts",
     },
     {
       dropdowns: [
@@ -124,7 +126,7 @@ const Header = ({languages,langIndex,setLangIndex}) => {
           dropdown: false,
         },
       ],
-      button:'Контакты'
+      button: "Контакты",
     },
 
     {
@@ -185,7 +187,7 @@ const Header = ({languages,langIndex,setLangIndex}) => {
           dropdown: false,
         },
       ],
-      button:'联系人'
+      button: "联系人",
     },
   ];
   const [navbarItems, setNavbarItems] = useState([]);
@@ -197,10 +199,10 @@ const Header = ({languages,langIndex,setLangIndex}) => {
     setNavbarItems(langData[langIndex].dropdowns);
   }, []);
   const changeLang = () => {
-    if (langIndex>=(languages.length-1)) {
+    if (langIndex >= languages.length - 1) {
       setLangIndex(0);
     } else {
-      setLangIndex(prev=>++prev);
+      setLangIndex((prev) => ++prev);
     }
   };
   return (
@@ -266,7 +268,9 @@ const Header = ({languages,langIndex,setLangIndex}) => {
               </div>
             </div>
           ))}
-          <button>{langData[langIndex-1]?.button}</button>
+          <button onClick={() => navigate("/contact")}>
+            {langData[langIndex - 1]?.button}
+          </button>
         </div>
         <div className="left">
           <img
@@ -308,7 +312,9 @@ const Header = ({languages,langIndex,setLangIndex}) => {
           </div>
           <div className="more">
             <p onClick={changeLang}>{languages[langIndex]}</p>
-            <button onClick={()=>navigate("/contact")}>{langData[langIndex].button}</button>
+            <button onClick={() => navigate("/contact")}>
+              {langData[langIndex].button}
+            </button>
             <i
               onClick={(e) => {
                 const hamburgerDIV = document.querySelector(".hamburger");

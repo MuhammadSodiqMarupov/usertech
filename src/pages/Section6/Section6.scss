@@ -2,7 +2,6 @@
   min-height: 600px;
   .container{
     max-width: 1440px;
-    padding-top: 100px;
     margin: 0 auto;
     height: 100%;
     display: flex;
@@ -12,6 +11,9 @@
     padding-right: 20px;
     padding-bottom: 30px;
     gap: 30px;
+    @media (max-width:700px) {
+      padding-top: 50px;
+    }
     .top{
       display: flex;
       flex-direction: column;
@@ -42,6 +44,8 @@
       gap: 50px;
       flex-wrap: wrap;
       img{
+        width: 75px;
+        height: 75px;
         cursor: pointer;
       }
       .innerTop{

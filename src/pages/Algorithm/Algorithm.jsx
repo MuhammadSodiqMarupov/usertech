@@ -1,5 +1,8 @@
+import { useContext } from "react";
+import { LanguageContext } from "../../context/contextCreation";
 import "./Algorithm.scss";
-const Algorithm = ({ langIndex }) => {
+const Algorithm = () => {
+  const {langIndex}=useContext(LanguageContext);
   const langData = [
     {
       titleGLOBAL: "Our approach to projects",

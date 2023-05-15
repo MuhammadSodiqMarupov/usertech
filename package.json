@@ -12,6 +12,7 @@
     "nuka-carousel": "^6.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-lazy-load-component": "^1.0.9",
     "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
     "remixicon": "^3.2.0",

@@ -1,6 +1,9 @@
 import "./Section10.scss";
 import table from "../../images/table 1.svg";
-function Section10({ langIndex }) {
+import { LanguageContext } from "../../context/contextCreation";
+import { useContext } from "react";
+function Section10() {
+  const {langIndex}=useContext(LanguageContext);
   const langData = [
     {
       title: "Our Studio's Working Principles",
@@ -16,7 +19,7 @@ function Section10({ langIndex }) {
       input:"ФИО",
       inpu2:"Телефон",
       full_descr: "под клиента.",
-      info: "   Мы пообщаемся с вами и предложим решение, которое даст максимальный результат  в ближайшее время. Не каждому бизнесу подходит SEO или нужен многостраничный сайт или web приложение.",
+      info: "   Мы пообщаемся с вами и предложим решение, которое даст максимальный результат в ближайшее время. Не каждому бизнесу подходит SEO или нужен многостраничный сайт или web приложение.",
     },
     {
       title: "我们工作室的工作原则",

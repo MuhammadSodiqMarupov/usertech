@@ -1,9 +1,11 @@
 import "./Footer.scss";
 import logo from "../../images/white_logo.png";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-const Footer = ({ langIndex }) => {
+import { useState, useEffect, useContext } from "react";
+import { LanguageContext } from "../../context/contextCreation";
+const Footer = () => {
   const [navbarItems, setNavbarItems] = useState([]);
+  const {langIndex}=useContext(LanguageContext);
   const langData = [
     {
       dropdowns: [
@@ -15,16 +17,18 @@ const Footer = ({ langIndex }) => {
         },
         {
           title: "Studio",
+          link:"/studio",
           body: [
             {
               title: "Work ALgorithm",
               page: "/algorithm",
             },
           ],
-          dropdown: true,
+          dropdown: false,
         },
         {
           title: "Services",
+          link:'/more',
           body: [
             {
               title: "Sites",
@@ -47,7 +51,7 @@ const Footer = ({ langIndex }) => {
               page: "/Fintech",
             },
           ],
-          dropdown: true,
+          dropdown: false,
         },
         {
           title: "Blog",
@@ -74,18 +78,18 @@ const Footer = ({ langIndex }) => {
         },
         {
           title: "Студия",
-          link: "/",
+          link: "/studio",
           body: [
             {
               title: "Алгоритм работы",
               page: "/algorithm",
             },
           ],
-          dropdown: true,
+          dropdown: false,
         },
         {
           title: "Услуги",
-          link: "",
+          link: "/more",
           body: [
             {
               title: "Сайты",
@@ -108,7 +112,7 @@ const Footer = ({ langIndex }) => {
               page: "/Fintech",
             },
           ],
-          dropdown: true,
+          dropdown: false,
         },
         {
           title: "Блог",
@@ -136,17 +140,18 @@ const Footer = ({ langIndex }) => {
         },
         {
           title: "工作室",
+          link:"/studio",
           body: [
             {
               title: "工作算法",
               page: "/algorithm",
             },
           ],
-          dropdown: true,
+          dropdown: false,
         },
         {
           title: "服务",
-          link: "/",
+          link: "/more",
           body: [
             {
               title: "站点",
@@ -169,7 +174,7 @@ const Footer = ({ langIndex }) => {
               page: "/Fintech",
             },
           ],
-          dropdown: true,
+          dropdown: false,
         },
         {
           title: "博客",
@@ -207,7 +212,7 @@ const Footer = ({ langIndex }) => {
         "我们自2010年以来一直致力于为俄罗斯和海外市场开发网站。我们的团队在不同的国家和城市拥有50多名员工。",
       address: "圣彼得堡191119",
       street: "Socialisticheskaya 21",
-      mail: "电子邮件：usertech78@ya.ru",
+      mail: "电子邮件usertech78@ya.ru",
     },
   ];
   useEffect(() => {
@@ -223,42 +228,56 @@ const Footer = ({ langIndex }) => {
       <div className="container">
         <div className="left">
           <div className="top">
-            <img src={logo} alt=""/>
+            <img src={logo} alt="Logo" />
+            <i
+            onClick={(e) => {
+              const hamburgerDIV = document.querySelector(".hamburger");
+              hamburgerDIV.classList.toggle("hamburger_active");
+            }}
+            className="ri-menu-line"
+            id="hamburger_menu"
+          ></i>
             {navbarItems.map((item, index) => (
-                <div key={index} className="dropdown">
-                  <button
-                      className="dropdown-button"
-                      onClick={() => navigate(item.link)}
-                  >
-                    {item.title}{" "}
-                    {item.dropdown ? (
-                        <i className="ri-arrow-down-s-line"></i>
-                    ) : (
-                        ""
-                    )}
-                  </button>
+              <div key={index} className="dropdown">
+                <button
+                  className="dropdown-button"
+                  onClick={() => navigate(item.link)}
+                >
+                  {item.title}{" "}
                   {item.dropdown ? (
-                      <div className="dropdown-content">
-                        {item.body.map((item1, index1) => (
-                            <p onClick={() => navigate(item1.page)} key={index1}>
-                              {item1.title}
-                            </p>
-                        ))}
-                      </div>
+                    <i className="ri-arrow-down-s-line"></i>
                   ) : (
-                      ""
+                    ""
                   )}
-                </div>
+                </button>
+                {item.dropdown ? (
+                  <div className="dropdown-content">
+                    {item.body.map((item1, index1) => (
+                      <p onClick={() => navigate(item1.page)} key={index1}>
+                        {item1.title}
+                      </p>
+                    ))}
+                  </div>
+                ) : (
+                  ""
+                )}
+              </div>
             ))}
           </div>
           <div className="bottom">
-            <p> Мы занимаемся разработкой веб-сайтов для России и зарубежных рынков с 2010 года. Наша команда – более пятидесяти сотрудников в разных странах и городах. </p>
+            <p>
+              {" "}
+              Мы занимаемся разработкой веб-сайтов для России и зарубежных
+              рынков с 2010 года. Наша команда – более пятидесяти сотрудников в
+              разных странах и городах.{" "}
+            </p>
           </div>
+  
         </div>
         <div className="right">
           <h1> +79997103995 </h1>
           <p> 191119, город Санкт-Петербург,</p>
-          <p> Социалистическая 21  </p>
+          <p> Социалистическая 21 </p>
           <small> e-mail : usertech78@ya.ru </small>
         </div>
       </div>

@@ -13,20 +13,19 @@
     align-items: center;
     position: relative;
     #hamburger {
-        font-size: 30px;
-        cursor: pointer;
-        display: none;
-        @media (max-width:864px) {
-            display: block;
-        }
+      font-size: 30px;
+      cursor: pointer;
+      display: none;
+      @media (max-width: 1000px) {
+        display: block;
+      }
     }
     .active {
       display: flex !important;
       transform: scaleY(1) !important;
-    
     }
     .hamburger_active {
-        right: 0 !important;
+      right: 0 !important;
     }
     .hamburger {
       display: none;
@@ -46,11 +45,11 @@
         top: 1.5%;
         font-size: 30px;
       }
-      @media (max-width:500px) {
-            width: 60vw;
-            padding-left: 10px;
+      @media (max-width: 500px) {
+        width: 60vw;
+        padding-left: 10px;
       }
-      @media (max-width: 865px) {
+      @media (max-width: 1000px) {
         padding-top: 30px;
         display: flex;
         flex-direction: column;
@@ -110,7 +109,7 @@
       align-items: center;
       display: flex;
       gap: 27px;
-      @media (max-width:864px) {
+      @media (max-width: 864px) {
         justify-content: end;
         gap: 14px;
       }
@@ -119,7 +118,7 @@
         height: 100%;
         display: flex;
         align-items: center;
-        gap: 27px;
+        gap: 10px;
         @media (max-width: 864px) {
           display: none;
         }
@@ -127,38 +126,47 @@
       .dropdown {
         position: relative;
         display: inline-block;
+        padding: 15px;
+        @media (max-width: 1000px) {
+          display: none;
+        }
 
         .dropdown-button {
           color: var(--black);
           background-color: #fff;
           border: none;
           font-weight: 500;
-          font-size: 20px;
+          font-size: 1rem;
           cursor: pointer;
         }
 
         .dropdown-content {
-          width: 100%;
+          width: 180px;
           display: none;
           position: absolute;
           background-color: #fff;
           z-index: 999999999;
-          top: 1.6vw;
-          right: -20px;
+          top: 3.6vw;
+          right: -50px;
+          box-shadow: 4px 4px 20px 0px rgba(34, 60, 80, 0.2);
 
           p {
             width: 100%;
+            font-family: "Montserrat", Sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
             text-align: center;
             color: #333333;
             cursor: pointer;
-            padding: 10px 0;
+            padding: 10px 10px 15px 22px;
+            text-align: left;
             font-size: 14px;
             text-decoration: none;
             transition: 0.3s all;
-            border-bottom: 1px solid #000;
-            
-            box-shadow: -6px -9px 48px -1px rgba(34, 60, 80, 0.2);
-
+            border-bottom-style: solid;
+            border-bottom-color: #c4c4c4;
+            border-bottom-width: 1px;
             &:last-child {
               border: none;
             }
@@ -204,7 +212,7 @@
           font-size: 20px;
           line-height: 34px;
           cursor: pointer;
-          @media (max-width:864px) {
+          @media (max-width: 864px) {
             display: none;
           }
         }

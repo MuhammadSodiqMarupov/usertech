@@ -1,5 +1,8 @@
+import { useContext } from "react";
+import { LanguageContext } from "../../context/contextCreation";
 import "./Fintech.scss";
-const Fintech = ({ langIndex }) => {
+const Fintech = () => {
+  const {langIndex}=useContext(LanguageContext);
   const langData = [
     {
       title: "Fintech services and prices",

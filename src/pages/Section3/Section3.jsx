@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Section3.scss";
+import { useNavigate } from "react-router-dom";
+import { LanguageContext } from "../../context/contextCreation";
 
-function Section3({ langIndex }) {
+function Section3() {
+  const {langIndex} = useContext(LanguageContext);
+  const navigate = useNavigate();
   const card1 = [
     {
       title: "Complex web services",
@@ -13,7 +17,7 @@ function Section3({ langIndex }) {
         "B2B platform",
         "Any non-standard solutions",
       ],
-      button: " Learn more => ",
+      button: " Learn more  ",
     },
     {
       title: "Сложные веб-сервисы",
@@ -25,7 +29,7 @@ function Section3({ langIndex }) {
         "Платформа B2B",
         "Любые нестандартные решения",
       ],
-      button: " Подробнее => ",
+      button: " Подробнее  ",
     },
     {
       title: "复杂的网络服务",
@@ -37,7 +41,7 @@ function Section3({ langIndex }) {
         "B2B平台",
         "任何非标准解决方案",
       ],
-      button: " 了解更多 => ",
+      button: " 了解更多  ",
     },
   ];
   const card2 = [
@@ -51,7 +55,7 @@ function Section3({ langIndex }) {
         "Individual functionality",
         "Individual functionality",
       ],
-      button: "Learn more =>",
+      button: "Learn more ",
     },
 
     {
@@ -64,7 +68,7 @@ function Section3({ langIndex }) {
         "Индивидуальный функционал",
         "Индивидуальный функционал",
       ],
-      button: " Подробнее => ",
+      button: " Подробнее  ",
     },
     {
       title: "网上商店",
@@ -76,7 +80,7 @@ function Section3({ langIndex }) {
         "个性化功能",
         "个性化功能",
       ],
-      button: "了解更多 =>",
+      button: "了解更多 ",
     },
   ];
   const card3 = [
@@ -89,7 +93,7 @@ function Section3({ langIndex }) {
         "Increasing the company's online sales",
         "Creating any functionality",
       ],
-      button: " Learn more => ",
+      button: " Learn more  ",
     },
     {
       title: "Корпоративный сайт",
@@ -100,7 +104,7 @@ function Section3({ langIndex }) {
         "Повысим онлайн продажи компании",
         "Создадим любой функционал",
       ],
-      button: " Подробнее => ",
+      button: " Подробнее  ",
     },
     {
       title: "企业网站",
@@ -111,7 +115,7 @@ function Section3({ langIndex }) {
         "提高公司的在线销售业绩",
         "创建任何功能",
       ],
-      button: " 了解更多 => ",
+      button: " 了解更多  ",
     },
   ];
   const card4 = [
@@ -125,7 +129,7 @@ function Section3({ langIndex }) {
         "technical support after launch.",
         "Website domain as a gift. Development: 7-14 days",
       ],
-      button: "Learn more =>",
+      button: "Learn more ",
     },
     {
       title: "Лендинг под ключ",
@@ -137,7 +141,7 @@ function Section3({ langIndex }) {
         "техническая поддержка после запуска.",
         "Домен сайта в подарок. Разработка: от 7-14 дней",
       ],
-      button: " Подробнее => ",
+      button: " Подробнее ",
     },
     {
       title: "关键落地页",
@@ -147,9 +151,9 @@ function Section3({ langIndex }) {
         "拥有销售设计并专注于吸引目标受众；",
         "面向精确和特定受众；",
         "上线后提供技术支持。",
-        "网站域名作为礼物。开发时间：7-14天",
+        "网站域名作为礼物。开发时间 7-14天",
       ],
-      button: "了解更多 =>",
+      button: "了解更多 ",
     },
   ];
   const card5 = [
@@ -164,7 +168,7 @@ function Section3({ langIndex }) {
         "Turnkey development using modern technologies.",
         "UX/UI design. 24/7 project support.",
       ],
-      button: " Learn more => ",
+      button: " Learn more  ",
     },
     {
       title: "Приложения",
@@ -177,7 +181,7 @@ function Section3({ langIndex }) {
         "Разработка под ключ на современных технологиях.",
         "UX/UI дизайн. Поддержка проекта 24/7",
       ],
-      button: " Подробнее => ",
+      button: " Подробнее  ",
     },
     {
       title: "移动应用程序",
@@ -190,7 +194,7 @@ function Section3({ langIndex }) {
         "使用现代技术的一站式开发。",
         "UX/UI设计。 24/7项目支持。",
       ],
-      button: " 了解更多 => ",
+      button: " 了解更多 ",
     },
   ];
   const card6 = [
@@ -205,7 +209,7 @@ function Section3({ langIndex }) {
         "Security",
         "Setup and testing",
       ],
-      button: "Learn More =>",
+      button: "Learn More ",
     },
     {
       title: "CMS",
@@ -218,7 +222,7 @@ function Section3({ langIndex }) {
         "Безопасность",
         "Настройка и тестировании",
       ],
-      button: " Подробнее => ",
+      button: " Подробнее ",
     },
     {
       title: "CMS",
@@ -231,14 +235,14 @@ function Section3({ langIndex }) {
         "安全性",
         "设置和测试",
       ],
-      button: "了解更多 =>",
+      button: "了解更多 ",
     },
   ];
   return (
     <div className="section3">
       <div className="container">
         <div className="main">
-          <div className="card">
+          <div className="card" onClick={()=>navigate("/more")}>
             <h1>{card1[langIndex].title}</h1>
             <div className="between">
               <p>{card1[langIndex].descr}</p>
@@ -249,11 +253,13 @@ function Section3({ langIndex }) {
               </ul>
             </div>
             <div className="bottom">
-              <span>{card1[langIndex].button}</span>
+              <span>
+                {card1[langIndex].button} <i className="ri-arrow-right-line"></i>
+              </span>
             </div>
           </div>
 
-          <div className="card">
+          <div className="card" onClick={()=>navigate("/more")}>
             <h1>{card2[langIndex].title}</h1>
             <div className="between">
               <p>{card2[langIndex].descr}</p>
@@ -264,11 +270,13 @@ function Section3({ langIndex }) {
               </ul>
             </div>
             <div className="bottom">
-              <span>{card2[langIndex].button}</span>
+              <span>
+                {card2[langIndex].button} <i className="ri-arrow-right-line"></i>
+              </span>
             </div>
           </div>
 
-          <div className="card">
+          <div className="card" onClick={()=>navigate("/more")}>
             <h1>{card3[langIndex].title}</h1>
             <div className="between">
               <p>{card3[langIndex].descr}</p>
@@ -279,11 +287,13 @@ function Section3({ langIndex }) {
               </ul>
             </div>
             <div className="bottom">
-              <span>{card3[langIndex].button}</span>
+              <span>
+                {card3[langIndex].button} <i className="ri-arrow-right-line"></i>
+              </span>
             </div>
           </div>
 
-          <div className="card">
+          <div className="card" onClick={()=>navigate("/more")}>
             <h1>{card4[langIndex].title}</h1>
             <div className="between">
               <p>{card4[langIndex].descr}</p>
@@ -294,11 +304,13 @@ function Section3({ langIndex }) {
               </ul>
             </div>
             <div className="bottom">
-              <span>{card4[langIndex].button}</span>
+              <span>
+                {card4[langIndex].button} <i className="ri-arrow-right-line"></i>
+              </span>
             </div>
           </div>
 
-          <div className="card">
+          <div className="card" onClick={()=>navigate("/more")}>
             <h1>{card5[langIndex].title}</h1>
             <div className="between">
               <p>{card5[langIndex].descr}</p>
@@ -309,10 +321,12 @@ function Section3({ langIndex }) {
               </ul>
             </div>
             <div className="bottom">
-              <span>{card5[langIndex].button}</span>
+              <span>
+                {card5[langIndex].button} <i className="ri-arrow-right-line"></i>
+              </span>
             </div>
           </div>
-          <div className="card">
+          <div className="card" onClick={()=>navigate("/more")}>
             <h1>{card6[langIndex].title}</h1>
             <div className="between">
               <p>{card6[langIndex].descr}</p>
@@ -323,7 +337,9 @@ function Section3({ langIndex }) {
               </ul>
             </div>
             <div className="bottom">
-              <span>{card6[langIndex].button}</span>
+              <span>
+                {card6[langIndex].button} <i className="ri-arrow-right-line"></i>
+              </span>
             </div>
           </div>
         </div>
