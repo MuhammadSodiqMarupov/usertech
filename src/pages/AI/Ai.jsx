@@ -1,5 +1,8 @@
+import { useContext } from "react";
+import { LanguageContext } from "../../context/contextCreation";
 import "./Ai.scss";
-const Ai = ({ langIndex }) => {
+const Ai = () => {
+  const {langIndex}=useContext(LanguageContext);
   const langData = [
     {
       title: "Services and prices for AI",

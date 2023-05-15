@@ -1,5 +1,8 @@
+import { useContext } from "react";
+import { LanguageContext } from "../../context/contextCreation";
 import "./Applications.scss";
-const Applications = ({ langIndex }) => {
+const Applications = () => {
+  const {langIndex}=useContext(LanguageContext);
   const langData = [
     {
       title: "Services and prices by application",

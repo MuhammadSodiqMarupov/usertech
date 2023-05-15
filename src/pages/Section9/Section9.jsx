@@ -1,6 +1,9 @@
 import "./Section9.scss";
 import call from "../../images/phone.gif";
-function Section9({ langIndex }) {
+import { LanguageContext } from "../../context/contextCreation";
+import { useContext } from "react";
+function Section9() {
+  const {langIndex}=useContext(LanguageContext);
   const langData = [
     {
       "title": "Leave a request for a project",

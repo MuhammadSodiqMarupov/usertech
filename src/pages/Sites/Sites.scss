@@ -28,11 +28,11 @@
         .content {
             margin-top: 50px;
             width: 80%;
-            gap: 10px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             .card {
+                margin-top: 20px;
                 background-color: rgb(249, 249, 251);
                 width: 370px;
                 height: 389px;
@@ -56,6 +56,7 @@
                     cursor: pointer;
                     border-radius: 13px;
                     transition: 0.3s all;
+                    margin-left: 20px;
                     &:hover {
                         background-color: #0256ff;
                         color: #fff;

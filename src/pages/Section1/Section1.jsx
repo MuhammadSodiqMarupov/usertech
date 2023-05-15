@@ -1,7 +1,10 @@
 import "./Section1.scss";
 import robo from "../../images/animationRobo.gif";
 import { useNavigate } from "react-router-dom";
-function Section1({ langIndex }) {
+import { useContext } from "react";
+import { LanguageContext } from "../../context/contextCreation";
+function Section1() {
+  const {langIndex} = useContext(LanguageContext);
   const navigate= useNavigate();
   const langData = [
     {

@@ -1,6 +1,6 @@
-.contact{
+.contact {
   min-height: 1400px;
-  .container{
+  .container {
     max-width: 1440px;
     height: 100%;
     display: flex;
@@ -9,12 +9,27 @@
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    h3{
+    .box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .bg_layer {
+        width: 80vw;
+        display: flex;
+        img {
+          width: 50%;
+          &:last-child {
+            margin-top: 16px;
+          }
+        }
+      }
+    }
+    h3 {
       text-align: center;
       font-size: 19px;
-      color: #0256ff;;
+      color: #0256ff;
     }
-    .secondSection{
+    .secondSection {
       height: 100%;
       width: 100%;
       text-align: center;
@@ -22,7 +37,7 @@
       flex-direction: column;
       gap: 20px;
       flex-wrap: wrap;
-      .cardDiv{
+      .cardDiv {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
@@ -32,7 +47,7 @@
           flex-direction: column;
           justify-content: center;
         }
-        .card1{
+        .card1 {
           max-width: 367px;
           height: 158px;
           display: flex;
@@ -40,17 +55,17 @@
           flex-direction: column;
           justify-content: center;
           gap: 10px;
-          p{
+          p {
             font-size: 18px;
-            color: #7A7A7A;
+            color: #7a7a7a;
           }
-          button{
+          button {
             width: 56px;
             height: 56px;
             background-color: black;
             border: none;
             border-radius: 10px;
-            i{
+            i {
               font-size: 40px;
               color: white;
             }
@@ -58,131 +73,223 @@
         }
       }
     }
-    .thirdSection{
-      width: 1200px;
-      min-height: 100%;
+    .form_card {
+      padding: 30px;
+      background-color: #000000;
+      position: relative;
+      width: 80vw;
+      min-height: 700px;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      .bigCard{
-        max-width: 1220px;
-        min-height: 800px;
-        background-color: #000000;
+      flex-direction: column;
+      gap: 30px;
+
+      p {
+        color: #fff;
+      }
+      .box {
+        margin-top: 10px;
         display: flex;
-        flex-direction: column;
-        padding: 40px;
+        input {
+          &:first-child {
+            width: 100px;
+            &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+          }
+        }
+        .range::-webkit-slider-thumb {
+          box-shadow: 1px 1px 1px #000000;
+          border: 1px solid #000000;
+          height: 15px;
+          width: 15px;
+          border-radius: 15px;
+          background: rgba(61, 205, 92, 0.5);
+          cursor: pointer;
+          -webkit-appearance: none;
+          margin-top: -3.5px;
+        }
+        .range::-ms-fill-lower {
+          background: gray;
+          border: 1px solid rgba(61, 205, 92, 0.5);
+          border-radius: 10px;
+          box-shadow: 1px 1px 1px #000000;
+        }
+      }
+      .part {
+        width: 100%;
+        height: auto;
+        display: flex;
         flex-wrap: wrap;
-        gap: 50px;
-        margin-top: 30px;
-        .firstPart{
+        gap: 30px;
+        align-items: end;
+        justify-content: space-between;
+        .checkbox-container {
+          //display: block;
+          position: relative;
+          padding-left: 35px;
+          margin-bottom: 12px;
+          cursor: pointer;
+          font-size: 22px;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          color: #fff;
+        }
+
+        /* Hide the browser's default checkbox */
+        .checkbox-container input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+        }
+
+        /* Create a custom checkbox */
+        .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 15px;
+          width: 15px;
+          border: 1px gray solid;
+          border-radius: 20%;
+          transition: all 0.5s ease-in-out;
+        }
+        ul {
+          list-style: none;
+        }
+
+        /* On mouse-over, add a grey background color */
+        .checkbox-container:hover input ~ .checkmark {
+          border: 1px #3dcd5c solid;
+        }
+
+        /* When the checkbox is checked, add a blue background */
+
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+
+        /* Show the checkmark when checked */
+        .checkbox-container input:checked ~ .checkmark:after {
+          display: block;
+        }
+
+        /* Style the checkmark/indicator */
+        .checkbox-container .checkmark:after {
+          width: 10px;
+          border-radius: 20%;
+          left: 3px;
+          top: 1px;
+          height: 10px;
+          background-color: #3dcd5c;
+        }
+
+        .input_box {
+          width: 46%;
           display: flex;
-          flex-direction: column;
+          transition: 0.2s all;
+          align-items: center;
+          border-bottom: 2px solid gray;
+          @media (max-width: 500px) {
+            width: 100%;
+          }
+          input {
+            width: 100%;
+            &:hover {
+              border: none;
+            }
+            border: none;
+          }
+          i {
+            color: #fff;
+            font-size: 30px;
+          }
+          &:hover {
+            border-bottom: 2px solid var(--input_color);
+          }
+        }
+        .checkbox {
+          width: 100%;
+          display: flex;
           gap: 10px;
           flex-wrap: wrap;
-          max-width:1000px;
-          .inpes{
+          padding-top: 20px;
+          label {
+            width: 200px;
             display: flex;
-            justify-content: space-around;
-          }
-          p{
-            font-size: 18px;
-            color: #FFFFFF;
-          }
-          input{
-            width: 48%;
-            height: 50px;
-            background-color: rgba(255,255,255,0);
-            font-size: 18px;
-            color: #FFFFFF;
-            border-top-width: 0px;
-            border-bottom-width: 2px;
-            border-right-width: 0px;
-            border-left-width: 0px;
-          }
-          }
-        .secondPart{
-          display: flex;
-          width: 100%;
-          flex-wrap: wrap;
-            .left{
-              width: 50%;
-              display: flex;
-              flex-direction: column;
-            p{
-              font-size: 18px;
-              color: #FFFFFF;
+            input {
+              width: 10px;
+              height: 10px;
+              background-color: transparent;
+              outline: none;
+              border: 1px solid var(--input_color);
             }
-              input{
-              max-width: 380px;
-              }
-            }
-          .right{
-            font-size: 18px;
-            color: #FFFFFF;
-            input{
-              width: 500px;
-              height: 50px;
-              background-color: rgba(255,255,255,0);
-              font-size: 18px;
-              color: #FFFFFF;
-              border-top-width: 0px;
-              border-bottom-width: 2px;
-              border-right-width: 0px;
-              border-left-width: 0px;
+            p {
+              font-size: 14px;
             }
           }
         }
-        .thirdPart{
-          display: flex;
-          width: 100%;
-          gap: 20px;
-          flex-direction: column;
-          p{
-            color: white;
-            font-size: 16px;
-          }
-          .bottomLast{
-            height: 100%;
-            width: 100%;
-            display: flex;
-            gap: 30px;
-            p{
-              color: white;
-            }
-            label{
-              display: flex;
-              gap: 7px;
-            }
-          }
-        }
-        .fourthPart{
-          width: 100%;
-          p{
-            color: white;
-          }
-          input{
-            width: 1000px;
-            height: 50px;
-            background-color: rgba(255,255,255,0);
-            font-size: 18px;
-            color: #FFFFFF;
-            border-top-width: 0px;
-            border-bottom-width: 2px;
-            border-right-width: 0px;
-            border-left-width: 0px;
-
-          }
-        }
-        button{
-          height: 67px;
+        input {
+          width: 46%;
+          background: transparent;
+          height: 50px;
+          transition: 0.2s all;
+          color: #fff;
+          outline: none;
           border: none;
+          position: relative;
+          border-bottom: 2px solid gray;
+          padding: 0px 10px;
           font-size: 18px;
-          font-weight: 600;
-          color: white;
-          border-radius: 10px;
-          background-color: #0256ff;
+          @media (max-width: 500px) {
+            width: 100%;
+          }
+          &:hover {
+            border-bottom: 3px solid var(--input_color);
+          }
         }
+        label {
+          p {
+            color: #fff;
+          }
+          input {
+            margin-top: 10px;
+            background: transparent;
+            width: 90%;
+            height: 50px;
+            transition: 0.3s all;
+            outline: none;
+          }
+          width: 46%;
+          @media (max-width: 500px) {
+            width: 100%;
+          }
+        }
+      }
+      .w-100 {
+        width: 100% !important;
+      }
+      button {
+        width: 100%;
+        height: 67px;
+        background-color: #0256ff;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 18px;
+        font-size: 18px;
+        transition: 0.3s all;
+        &:hover {
+          background-color: #f45c20;
         }
       }
     }
   }
+}

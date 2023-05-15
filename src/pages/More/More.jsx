@@ -2,8 +2,11 @@ import { useNavigate } from "react-router-dom";
 import "./More.scss";
 import glasses from "../../images/info-8.png"
 import  more from "../../images/ozyumenko-mockup.png"
+import { useContext } from "react";
+import { LanguageContext } from "../../context/contextCreation";
 const More = () => {
-    const navigate = useNavigate();
+  const { langIndex } = useContext(LanguageContext);
+  const navigate = useNavigate();
   return (
     <div className="more_section">
       <div className="container">
@@ -16,7 +19,7 @@ const More = () => {
         </p>
         <div className="content">
           <div className="top">
-            <div className="card">
+            <div className="card" data-aos="fade-up">
               <img src={require("../../images/card1_more.jpg")} alt="" />
               <div className="card_title">
                 Web разработка <br /> (Сайты)
@@ -26,20 +29,24 @@ const More = () => {
                 маркетинговый инструмент. Он повысит ваши продажи и легко
                 продвинется в ТОП.
               </div>
-              <button onClick={()=>navigate("/sites")}>Узнать подробнее</button>
+              <button onClick={() => navigate("/sites")}>
+                Узнать подробнее
+              </button>
             </div>
-            <div className="card">
+            <div className="card" data-aos="fade-up">
               <img src={require("../../images/card2_more.jpg")} alt="" />
               <div className="card_title">Продвижение</div>
               <div className="card_descr">
                 Продвижение сайтов — комплекс работ по привлечению целевого
                 трафика из органической (естественной) выдачи поисковых систем.
               </div>
-              <button onClick={()=>navigate("/sites")}>Узнать подробнее</button>
+              <button onClick={() => navigate("/sites")}>
+                Узнать подробнее
+              </button>
             </div>
           </div>
           <div className="bottom">
-            <div className="card">
+            <div className="card" data-aos="fade-up">
               <img src={require("../../images/card3_more.jpg")} alt="" />
               <div className="card_title">Мобильные приложения</div>
               <div className="card_descr">
@@ -47,25 +54,31 @@ const More = () => {
                 платформ iOS, Android, Android Wear, watchOS, ipadOS, tvOS,
                 macOS.
               </div>
-              <button onClick={()=>navigate("/sites")}>Узнать подробнее</button>
+              <button onClick={() => navigate("/sites")}>
+                Узнать подробнее
+              </button>
             </div>
-            <div className="card">
+            <div className="card" data-aos="fade-up">
               <img src={require("../../images/card4_more.jpg")} alt="" />
               <div className="card_title">Искусственный интеллект</div>
               <div className="card_descr">
                 Разрабатываем и настраиваем машинное обучение для автоматизации
                 и оптимизации бизнес процессов
               </div>
-              <button onClick={()=>navigate("/sites")}>Узнать подробнее</button>
+              <button onClick={() => navigate("/sites")}>
+                Узнать подробнее
+              </button>
             </div>
-            <div className="card">
+            <div className="card" data-aos="fade-up">
               <img src={require("../../images/card5_more.jpg")} alt="" />
               <div className="card_title">Финтеч</div>
               <div className="card_descr">
                 Разрабатываем финансовые WEB-сервисы для бизнеса или стартап
                 проекты .
               </div>
-              <button onClick={()=>navigate("/sites")}>Узнать подробнее</button>
+              <button onClick={() => navigate("/sites")}>
+                Узнать подробнее
+              </button>
             </div>
           </div>
         </div>

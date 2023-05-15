@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Section4.scss";
 import robo from "../../images/animationRobo.gif";
-function Section4({ langIndex }) {
+import { LanguageContext } from "../../context/contextCreation";
+function Section4() {
+  const {langIndex} = useContext(LanguageContext);
   const langData = [
     {
       title1: "Created an IT product, and what's next?",

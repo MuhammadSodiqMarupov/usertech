@@ -1,6 +1,9 @@
 import "./Section7.scss";
 import robo from "../../images/animationRobo.gif";
-function Section7({ langIndex }) {
+import { LanguageContext } from "../../context/contextCreation";
+import { useContext } from "react";
+function Section7() {
+  const {langIndex}=useContext(LanguageContext);
   const titles = [
     "Этапы развития Вашего проекта",
     "Stages of Your Project Development",

@@ -1,5 +1,8 @@
+import { useContext } from "react";
+import { LanguageContext } from "../../context/contextCreation";
 import "./Jobs.scss";
-const Jobs = ({ langIndex }) => {
+const Jobs = () => {
+  const {langIndex}=useContext(LanguageContext);
   const langData = [
     {
       title: "VACANCIES",

@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Section5.scss";
-function Section5({langIndex}) {
+import { useNavigate } from "react-router-dom";
+import { LanguageContext } from "../../context/contextCreation";
+function Section5() {
+  const navigate = useNavigate();
+  const {langIndex}=useContext(LanguageContext);
   const card1 = [
     {
       title: "Comprehensive Promotion",
@@ -127,7 +131,7 @@ function Section5({langIndex}) {
             <li>{card1[langIndex].link7}</li>
             <li>{card1[langIndex].link8}</li>
           </ul>
-          <button>{card1[langIndex].button}</button>
+          <button onClick={()=>navigate("/promotion")}>{card1[langIndex].button}</button>
         </div>
 
         <div className="card2">
@@ -142,7 +146,7 @@ function Section5({langIndex}) {
             <li>{card2[langIndex].link7}</li>
             <li>{card2[langIndex].link8}</li>
           </ul>
-          <button> {card2[langIndex].button} </button>
+          <button onClick={()=>navigate("/promotion")}> {card2[langIndex].button} </button>
         </div>
 
         <div className="card3">
@@ -156,7 +160,7 @@ function Section5({langIndex}) {
             <li>{card3[langIndex].link6}</li>
             <li>{card3[langIndex].link7}</li>
           </ul>
-          <button> {card2[langIndex].button} </button>
+          <button onClick={()=>navigate("/promotion")}> {card2[langIndex].button} </button>
         </div>
       </div>
     </div>
