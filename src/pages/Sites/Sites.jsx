@@ -1,5 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import "./Sites.scss";
-const Sites = ({ langIndex }) => {
+import { LanguageContext } from "../../context/contextCreation";
+import { useContext } from "react";
+const Sites = () => {
+  const {langIndex}=useContext(LanguageContext);
+  const navigate  = useNavigate();
   const langData = [
     {
       title: "Website development services and prices",
@@ -31,7 +36,7 @@ const Sites = ({ langIndex }) => {
           >
             <div className="card_title">// project manager</div>
             <div className="card_descr">SPECILAZITION:Project management</div>
-            <button className="card_button">Detail</button>
+            <button className="card_button" onClick={()=>navigate("/sitemore")}>Detail</button>
           </div>
           <div
             className="card"

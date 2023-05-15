@@ -1,6 +1,9 @@
+import { useContext } from "react";
+import { LanguageContext } from "../../context/contextCreation";
 import "./Promotion.scss";
 
-const Promotion = ({ langIndex }) => {
+const Promotion = () => {
+  const {langIndex}=useContext(LanguageContext);
   const langData = [
     {
       title: "Promotion services and prices",

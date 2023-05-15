@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import "./Section11.scss";
+import { LanguageContext } from "../../context/contextCreation";
 
-function Section11({ langIndex }) {
+function Section11() {
+  const {langIndex}=useContext(LanguageContext);
   const langData = [
     {
       title: "We'll be honest with you",

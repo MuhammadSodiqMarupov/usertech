@@ -1,35 +1,41 @@
 import { Route, Routes } from "react-router-dom";
-import { useState, useEffect } from "react";
-import Header from "./pages/Header/Header";
-import Section1 from "./pages/Section1/Section1";
-import Section2 from "./pages/Section2/Section2";
-import swiper1 from "./images/swiper_1.jpeg";
-import Section3 from "./pages/Section3/Section3";
-import Section4 from "./pages/Section4/Section4";
-import Section5 from "./pages/Section5/Section5";
-import Jobs from "./pages/Jobs/Jobs";
+import React, { useState, useEffect } from "react";
 import Aos from "aos";
-import Blog from "./pages/Blog/Blog";
-import Algorithm from "./pages/Algorithm/Algorithm";
-import Sites from "./pages/Sites/Sites";
-import Ai from "./pages/AI/Ai";
-import Promotion from "./pages/Promotion/Promotion";
-import Section6 from "./pages/Section6/Section6";
-import Section7 from "./pages/Section7/Section7";
-import Section8 from "./pages/Section8/Section8";
-import Section9 from "./pages/Section9/Section9";
-import Section10 from "./pages/Section10/Section10";
-import Applications from "./pages/Applications/Applications";
-import Fintech from "./pages/Fintech/Fintech";
-import Footer from "./pages/Footer/Footer";
-import Carousel from "nuka-carousel";
-import Section11 from "./pages/Section11/Section11";
-import Section12 from "./pages/Section12/Section12";
-import More from "./pages/More/More";
-import Contact from "./pages/Contact/Contact";
+import { LanguageContext } from "./context/contextCreation";
+import Studio from "./pages/Studio/Studio";
+const Jobs = React.lazy(() => import("./pages/Jobs/Jobs"));
+const Section2 = React.lazy(() => import("./pages/Section2/Section2"));
+const Section4 = React.lazy(() => import("./pages/Section4/Section4"));
+const Section3 = React.lazy(() => import("./pages/Section3/Section3"));
+const Section5 = React.lazy(() => import("./pages/Section5/Section5"));
+const Blog = React.lazy(() => import("./pages/Blog/Blog"));
+const Algorithm = React.lazy(() => import("./pages/Algorithm/Algorithm"));
+const Sites = React.lazy(() => import("./pages/Sites/Sites"));
+const Ai = React.lazy(() => import("./pages/AI/Ai"));
+const Promotion = React.lazy(() => import("./pages/Promotion/Promotion"));
+const Section6 = React.lazy(() => import("./pages/Section6/Section6"));
+const Section7 = React.lazy(() => import("./pages/Section7/Section7"));
+const Section8 = React.lazy(() => import("./pages/Section8/Section8"));
+const Section9 = React.lazy(() => import("./pages/Section9/Section9"));
+const Section10 = React.lazy(() => import("./pages/Section10/Section10"));
+const Applications = React.lazy(() =>
+  import("./pages/Applications/Applications")
+);
+const Fintech = React.lazy(() => import("./pages/Fintech/Fintech"));
+const Footer = React.lazy(() => import("./pages/Footer/Footer"));
+const Section12 = React.lazy(() => import("./pages/Section12/Section12"));
+const Section11 = React.lazy(() => import("./pages/Section11/Section11"));
+const More = React.lazy(() => import("./pages/More/More"));
+const Contact = React.lazy(() => import("./pages/Contact/Contact"));
+const SiteMore = React.lazy(() => import("./pages/SiteMore/SiteMore"));
+const AbsoluteLinks = React.lazy(() =>
+  import("./pages/AbosoluteLinks/AbsoluteLinks")
+);
+const Swiper = React.lazy(() => import("./pages/Swiper/Swiper"));
+const Header = React.lazy(() => import("./pages/Header/Header"));
+const Section1 = React.lazy(() => import("./pages/Section1/Section1"));
 function App() {
   const languages = ["En", "Ru", "Chine"];
-  const [slides, setSlides] = useState([]);
   const card1 = [
     {
       title: "Fast Business Launch",
@@ -176,181 +182,72 @@ function App() {
       links: ["广泛覆盖受众", "方便顾客", "高效物流", "实时操作"],
     },
   ];
-  const [langIndex, setLangIndex] = useState(
-    JSON.parse(localStorage.getItem("LANG")) ?? 1
-  );
+  const [langIndex, setLangIndex] = useState(1);
 
   useEffect(() => {
     Aos.init({ once: true });
+    setLangIndex(JSON.parse(localStorage.getItem("LANG")) ?? 1);
   }, []);
   return (
     <div className="App">
-      <Header
-        languages={languages}
-        setLangIndex={setLangIndex}
-        langIndex={langIndex}
-      />
-      <div className="flying_items">
-        <div className="spinner-wrap">
-          <img
-            src="
-                    https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png?20220101141644
-                    "
-            alt="Telegram Image"
+      <LanguageContext.Provider value={{ langIndex, setLangIndex }}>
+        <Header
+          languages={languages}
+          setLangIndex={setLangIndex}
+        />
+        <AbsoluteLinks />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Section1  />
+                <Section2  />
+                <Section3  />
+                <Swiper
+                
+                  card1={card1}
+                  card2={card2}
+                  card3={card3}
+                  card4={card4}
+                />
+                <Section4  />
+                <Section5  />
+                <Section6  />
+                <Section7  />
+                <Section8  />
+                <Section9  />
+                <Section10 />
+                <Section11 />
+                <Section12 />
+              </>
+            }
           />
-
-          <div className="spinner-item"></div>
-          <div className="spinner-item spinner-item--2"></div>
-          <div className="spinner-item spinner-item--3"></div>
-        </div>
-        <div className="spinner-wrap">
-          <img
-            src="
-                    https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg
-                    "
-            alt="Whatsapp Image"
+          <Route path="/jobs" element={<Jobs/>} />
+          <Route
+            path="/algorithm"
+            element={<Algorithm  />}
           />
-
-          <div
-            className="spinner-item"
-            style={{ borderColor: "rgba(25,199,13,255)" }}
-          ></div>
-          <div
-            className="spinner-item spinner-item--2"
-            style={{ borderColor: "rgba(25,199,13,255)" }}
-          ></div>
-          <div
-            className="spinner-item spinner-item--3"
-            style={{ borderColor: "rgba(25,199,13,255)" }}
-          ></div>
-        </div>
-      </div>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Section1 langIndex={langIndex} />
-              <Section2 langIndex={langIndex} />
-              <Section3 langIndex={langIndex} />
-              <div className="swiper_container">
-                <Carousel
-                  renderBottomCenterControls={false}
-                  renderCenterLeftControls={({ previousSlide }) => (
-                    <button
-                      onClick={previousSlide}
-                      className="btn-swiper btn-1"
-                    >
-                      <i className="ri-arrow-left-line"></i>
-                    </button>
-                  )}
-                  renderCenterRightControls={({ nextSlide }) => (
-                    <button onClick={nextSlide} className="btn-swiper btn-2">
-                      <i className="ri-arrow-right-line"></i>
-                    </button>
-                  )}
-                >
-                  <div className="swiper_item i-1">
-                    <div className="title">
-                      {card1[langIndex].title}
-                      <br />
-                      <strong> {card1[langIndex].br}</strong>
-                    </div>
-                    <div className="price">{card1[langIndex].price}</div>
-                    <ul className="links">
-                      {card1[langIndex].links.map((item, index) => (
-                        <li key={index}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="swiper_item i-2">
-                    <div className="title">
-                      {card2[langIndex].title}
-                      <br />
-                      <strong> {card2[langIndex].br}</strong>
-                    </div>
-                    <div className="price">{card2[langIndex].price}</div>
-                    <ul className="links">
-                      {card2[langIndex].links.map((item, index) => (
-                        <li key={index}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="swiper_item i-1">
-                    <div className="title">
-                      {card3[langIndex].title}
-                      <br />
-                      <strong> {card3[langIndex].br}</strong>
-                    </div>
-                    <div className="price">{card3[langIndex].price}</div>
-                    <ul className="links">
-                      {card3[langIndex].links.map((item, index) => (
-                        <li key={index}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="swiper_item i-1">
-                    <div className="title">
-                      {card4[langIndex].title}
-                      <br />
-                      <strong> {card4[langIndex].br}</strong>
-                    </div>
-                    <div className="price">{card4[langIndex].price}</div>
-                    <ul className="links">
-                      {card4[langIndex].links.map((item, index) => (
-                        <li key={index}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="swiper_item i-1">
-                    <div className="title">
-                      {card4[langIndex].title}
-                      <br />
-                      <strong> {card4[langIndex].br}</strong>
-                    </div>
-                    <div className="price">{card4[langIndex].price}</div>
-                    <ul className="links">
-                      {card4[langIndex].links.map((item, index) => (
-                        <li key={index}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </Carousel>
-              </div>
-              <Section4 langIndex={langIndex} />
-              <Section5 langIndex={langIndex} />
-              <Section6 langIndex={langIndex} />
-              <Section7 langIndex={langIndex} />
-              <Section8 langIndex={langIndex} />
-              <Section9 langIndex={langIndex} />
-              <Section10 langIndex={langIndex} />
-              <Section11 langIndex={langIndex} />
-              <Section12 langIndex={langIndex} />
-            </>
-          }
+          <Route path="/more" element={<More />} />
+          <Route path="/sites" element={<Sites  />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/AI" element={<Ai/>} />
+          <Route
+            path="/promotion"
+            element={<Promotion />}
         />
-        <Route path="/jobs" element={<Jobs langIndex={langIndex} />} />
-        <Route
-          path="/algorithm"
-          element={<Algorithm langIndex={langIndex} />}
-        />
-        <Route path="/more" element={<More />} />
-        <Route path="/sites" element={<Sites langIndex={langIndex} />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/AI" element={<Ai langIndex={langIndex} />} />
-        <Route
-          path="/promotion"
-          element={<Promotion langIndex={langIndex} />}
-        />
-        <Route
-          path="/applications"
-          element={<Applications langIndex={langIndex} />}
-        />
-        <Route path="/Fintech" element={<Fintech langIndex={langIndex} />} />
-        <Route path="/contact" element={<Contact/>}/>
-      </Routes>
-      <Footer langIndex={langIndex} />
+          <Route
+            path="/applications"
+            element={<Applications  />}
+          />
+          <Route path="/Fintech" element={<Fintech />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/sitemore" element={<SiteMore />} />
+          <Route path="/studio" element={<Studio />}/>
+        </Routes>
+        <Footer/>
+      </LanguageContext.Provider>
     </div>
   );
 }
-export default App;
+export default React.memo(App, () => true);

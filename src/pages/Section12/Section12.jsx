@@ -1,6 +1,9 @@
 import "./Section12.scss";
 import direktor from "../../images/div.ytp-cued-thumbnail-overlay-image.webp";
-function Section12({ langIndex }) {
+import { LanguageContext } from "../../context/contextCreation";
+import { useContext } from "react";
+function Section12() {
+  const {langIndex}=useContext(LanguageContext);
   const langData = [
     {
       title: "Get a consultation",
@@ -66,9 +69,7 @@ function Section12({ langIndex }) {
           </div>
         </div>
         <div className="right">
-          <div className="forImg">
-            <img src={direktor} alt="Director " />
-          </div>
+          <img src={direktor} alt="director" />
         </div>
       </div>
     </div>
