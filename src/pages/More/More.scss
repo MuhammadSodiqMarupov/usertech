@@ -1,4 +1,4 @@
-.more {
+.more_section {
     margin-top: 50px;
     min-height: 500px;
     padding: 30px 0;
@@ -43,7 +43,7 @@
                 justify-content: center;
                 flex-wrap: wrap;
             }
-            .card {
+            .card{
                 box-shadow: 4px 4px 40px 2px rgba(34, 60, 80, 0.2);
                 border-radius: 12px;
                 padding: 20px;
@@ -52,7 +52,7 @@
                 padding-bottom: 40px;
                 flex-direction: column;
                 gap: 30px;
-                img {
+                img{
                     object-fit: contain;
                 }
                 .card_title {
@@ -60,13 +60,13 @@
                     font-weight: 600;
                     font-size: 20px;
                 }
-                .card_descr {
+                .card_descr{
                     font-size: 18px;
                     text-align: center;
                     color: #7a7a7a;
                     line-height: 31px;
                 }
-                button {
+                button{
                     border: none;
                     background-color: #fff;
                     transition: 0.3s all;
@@ -78,6 +78,124 @@
                     color: #0256ff;
                     &:hover {
                         color: #f45c20;
+                    }
+                }
+            }
+        }
+        .content-2{
+            width: 100%;
+            min-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        .top{
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            .left{
+                height: 365px;
+                max-width: 600px;
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+                .right{
+                    max-width: 300px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                    h1{
+                        font-size: 32px;
+                    }
+                    p{
+                        font-size: 18px;
+                        color: #7A7A7A;
+                    }
+                    button{
+                        max-width: 281px;
+                        height: 57px;
+                        border-color: white;
+                        border-radius: 13px 13px 13px 13px;
+                        background: #f45c20;
+                        color: white;
+                        font-weight: 600;
+                    }
+                }
+        }
+        }
+        .content-3{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            .bigCard{
+                margin: 0 auto;
+                width: 1120px;
+                background-color: blue;
+                height: 602px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 40px;
+                .top{
+                    box-sizing: border-box;
+                    display: flex;
+                    width: 100%;
+                        justify-content: space-around;
+                 h1{
+                     color: white;
+                 }
+                    button{
+                        max-width: 186px;
+                        height: 75px;
+                        font-size: 18px;
+                        font-weight: 500;
+                        border: none;
+                        border-radius: 10px;
+                        color:#f45c20 ;
+                        background-color: #FFFFFF;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 20px;
+                        transition: 0.3s all;
+                        &:hover{
+                            color: white;
+                            background-color: #f45c20;
+                        }
+                    }
+             }
+                .bottom{
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-evenly;
+                    .card1{
+                        height: 300px;
+                        background-color: #FFFFFF;
+                        max-width: 200px;
+                        display: flex;
+                        flex-direction: column;
+                        border-radius: 10px;
+                        text-align: center;
+                        .imgDiv{
+                            height: 200px;
+                            max-width: 200px;
+                            img{
+                                height: 100%;
+                                width: 100%;
+                                object-fit: contain;
+                            }
+                            p{
+                                    font-size: 10px;
+                            }
+                        }
+
                     }
                 }
             }
