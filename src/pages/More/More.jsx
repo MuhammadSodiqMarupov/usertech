@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./More.scss";
+import glasses from "../../images/info-8.png"
+import  more from "../../images/ozyumenko-mockup.png"
 import { useContext } from "react";
 import { LanguageContext } from "../../context/contextCreation";
 const More = () => {
@@ -81,8 +83,49 @@ const More = () => {
           </div>
         </div>
         <div className="content-2">
-          <div className="top"></div>
-          <div className="bottom"></div>
+            <div className="top">
+              <div className="left">
+                <img src={glasses} alt=""/>
+              </div>
+              <div className="right">
+                <h1> Мы являемся IT компанией с полным спектром услуг</h1>
+                <p> Вся необходимая информация по разработке и по продвижению проектов есть на сайте. Если вы не нашли ответ на ваш вопрос , то просто свяжитесь с нами .</p>
+                <button> Эсть проект? свяжитесь с нами! </button>
+              </div>
+            </div>
+        </div>
+        <div className="content-3">
+          <div className="bigCard">
+            <div className="top">
+              <h1> Наши последние проекты</h1>
+              <button> Посмотреть все </button>
+            </div>
+            <div className="bottom">
+              <div className="card1">
+                <div className="imgDiv">
+                  <img src={more} alt=""/>
+                </div>
+                <p> Юридическая помощь </p>
+                <h2> Web </h2>
+              </div>
+              <div className="card1">
+                <div className="imgDiv">
+                  <img src={more} alt=""/>
+                </div>
+                <p> Юридическая помощь </p>
+                <h2> Web </h2>
+              </div>
+              
+              <div className="card1">
+                <div className="imgDiv">
+                  <img src={more} alt=""/>
+                </div>
+                <p> Юридическая помощь </p>
+                <h2> Web </h2>
+              </div>
+              
+            </div>
+          </div>
         </div>
       </div>
     </div>
